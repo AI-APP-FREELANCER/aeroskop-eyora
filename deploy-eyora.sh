@@ -34,7 +34,7 @@ echo ""
 echo "Step 2: Setting up application directory..."
 if [ -d "$APP_DIR/.git" ]; then
     echo "  Repository exists — pulling latest changes..."
-    sudo -u "$APP_USER" bash -c "cd '$APP_DIR' && git pull origin main"
+    sudo -u "$APP_USER" bash -c "cd '$APP_DIR' && git pull origin Main"
 else
     echo "  Cloning repository..."
     sudo mkdir -p "$APP_DIR"

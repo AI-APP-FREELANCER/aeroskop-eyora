@@ -1,65 +1,89 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import Theme1 from "@/components/theme1/HomePage";
+import Theme2 from "@/components/theme2/HomePage";
+import Theme3 from "@/components/theme3/HomePage";
+
+const themes = [
+  {
+    id: 1,
+    label: "Clarity",
+    desc: "Corporate Blue — Clean & Trustworthy",
+    color: "#1e40af",
+    active: "bg-blue-700 text-white shadow-lg shadow-blue-200",
+    inactive: "bg-white text-blue-700 border border-blue-200 hover:bg-blue-50",
+    dot: "bg-blue-700",
+  },
+  {
+    id: 2,
+    label: "Nova",
+    desc: "Modern Teal — Vibrant & Innovative",
+    color: "#0f766e",
+    active: "bg-teal-700 text-white shadow-lg shadow-teal-200",
+    inactive: "bg-white text-teal-700 border border-teal-200 hover:bg-teal-50",
+    dot: "bg-teal-700",
+  },
+  {
+    id: 3,
+    label: "Prestige",
+    desc: "Premium Gold — Luxury & Authority",
+    color: "#92400e",
+    active: "bg-amber-800 text-white shadow-lg shadow-amber-200",
+    inactive: "bg-white text-amber-800 border border-amber-200 hover:bg-amber-50",
+    dot: "bg-amber-800",
+  },
+];
 
 export default function Home() {
+  const [active, setActive] = useState(1);
+  const current = themes.find((t) => t.id === active)!;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      {/* Theme Switcher Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[9999] bg-white/96 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden sm:block">
+              Design Theme
+            </span>
+            <div className="flex gap-1.5">
+              {themes.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setActive(t.id)}
+                  className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                    active === t.id ? t.active : t.inactive
+                  }`}
+                >
+                  <span
+                    className={`w-2 h-2 rounded-full inline-block transition-colors ${
+                      active === t.id ? "bg-white/70" : t.dot
+                    }`}
+                  />
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <span className="text-xs text-slate-400 hidden md:block font-medium">
+            {current.desc}
+          </span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* Theme Panels */}
+      <div className="pt-[50px]">
+        <div className={active === 1 ? "block" : "hidden"}>
+          <Theme1 />
         </div>
-      </main>
+        <div className={active === 2 ? "block" : "hidden"}>
+          <Theme2 />
+        </div>
+        <div className={active === 3 ? "block" : "hidden"}>
+          <Theme3 />
+        </div>
+      </div>
     </div>
   );
 }

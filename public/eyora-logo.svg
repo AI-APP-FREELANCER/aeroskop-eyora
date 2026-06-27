@@ -1,0 +1,45 @@
+<svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="eyoraGradMain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5aab1e;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#4a8c1a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#3a7014;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#264d0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eyoraGradHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8ed621;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6db928;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropshadow" x="-5%" y="-5%" width="115%" height="120%">
+      <feDropShadow dx="1.5" dy="2" stdDeviation="2" flood-color="#1a3d06" flood-opacity="0.45"/>
+    </filter>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Main "eyora" text -->
+  <text
+    x="160" y="66"
+    text-anchor="middle"
+    font-family="'Trebuchet MS', 'Arial Rounded MT Bold', Arial, sans-serif"
+    font-size="68"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="url(#eyoraGradMain)"
+    filter="url(#dropshadow)"
+  >eyora</text>
+
+  <!-- Bright highlight on the 'o' (the lens/eye accent) -->
+  <ellipse cx="192" cy="44" rx="8" ry="5"
+    fill="none"
+    stroke="url(#eyoraGradHighlight)"
+    stroke-width="2.5"
+    opacity="0.9"
+  />
+  <ellipse cx="192" cy="44" rx="4" ry="2.5"
+    fill="url(#eyoraGradHighlight)"
+    opacity="0.6"
+  />
+</svg>

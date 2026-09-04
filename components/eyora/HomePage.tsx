@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import CapabilityStrip from "./CapabilityStrip";
 import ProductPortfolio from "./ProductPortfolio";
 import Technology from "./Technology";
+import Industries from "./Industries";
 import WhyEyora from "./WhyEyora";
 import CtaBand from "./CtaBand";
 import Footer from "./Footer";
@@ -17,6 +18,7 @@ export default function HomePage() {
         <CapabilityStrip />
         <ProductPortfolio />
         <Technology />
+        <Industries />
         <WhyEyora />
         <CtaBand />
       </main>

@@ -7,6 +7,7 @@ import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/site";
 const NAV_LINKS = [
   { label: "Products", href: "/#products" },
   { label: "About", href: "/about" },
+  { label: "Industries", href: "/#industries" },
   { label: "Why Eyora", href: "/#why-eyora" },
   { label: "Contact", href: "/#contact" },
 ];

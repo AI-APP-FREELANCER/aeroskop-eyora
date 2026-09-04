@@ -1,16 +1,18 @@
 "use client";
 
-import { Store, Building2, Home, Warehouse, GraduationCap, Hotel } from "lucide-react";
+import Link from "next/link";
+import { Store, Building2, Home, Warehouse, GraduationCap, Hotel, ArrowRight, type LucideIcon } from "lucide-react";
+import { industries } from "@/lib/industries";
 import { useReveal } from "@/lib/useReveal";
 
-const INDUSTRIES = [
-  { icon: Store, title: "Retail & Commercial", desc: "Entrance, till and stockroom coverage with clear low-light footage." },
-  { icon: Building2, title: "Offices & Corporate", desc: "Discreet dome and turret cameras for lobbies, floors and car parks." },
-  { icon: Home, title: "Residential Compounds", desc: "Perimeter bullet cameras and Wi-Fi cube cameras for gates and villas." },
-  { icon: Warehouse, title: "Warehousing & Logistics", desc: "Wide-angle NVR setups covering loading docks and long aisles." },
-  { icon: GraduationCap, title: "Education", desc: "Campus-wide coverage with centralized NVR recording and PoE simplicity." },
-  { icon: Hotel, title: "Hospitality", desc: "Vandal-resistant IK10 domes for corridors, entrances and back-of-house." },
-];
+const ICONS: Record<string, LucideIcon> = {
+  retail: Store,
+  corporate: Building2,
+  residential: Home,
+  logistics: Warehouse,
+  schools: GraduationCap,
+  hospitality: Hotel,
+};
 
 export default function Industries() {
   const ref = useReveal<HTMLDivElement>();
@@ -28,15 +30,27 @@ export default function Industries() {
         </div>
 
         <div ref={ref} data-reveal-root className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {INDUSTRIES.map((ind) => (
-            <div key={ind.title} data-reveal className="reveal eyora-card rounded-2xl p-7">
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center eyora-badge !px-0 !py-0">
-                <ind.icon size={20} />
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-[var(--text-primary)]">{ind.title}</h3>
-              <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">{ind.desc}</p>
-            </div>
-          ))}
+          {industries.map((ind) => {
+            const IndIcon = ICONS[ind.slug];
+            return (
+              <Link
+                key={ind.slug}
+                href={`/industry/${ind.slug}`}
+                data-reveal
+                className="reveal eyora-card rounded-2xl p-7 group"
+              >
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center eyora-badge !px-0 !py-0">
+                  <IndIcon size={20} />
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-[var(--text-primary)]">{ind.name}</h3>
+                <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">{ind.sub}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-[var(--text-accent)]">
+                  View Template
+                  <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

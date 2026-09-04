@@ -33,7 +33,7 @@ export default function CtaBand() {
               Chat on WhatsApp — {WHATSAPP_DISPLAY}
             </a>
             <a
-              href="#products"
+              href="/#products"
               className="btn-outline rounded-full px-8 py-4 text-sm font-semibold"
             >
               Browse Catalog

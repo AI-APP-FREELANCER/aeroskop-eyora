@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, Check } from "lucide-react";
+import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, Check, FileText } from "lucide-react";
 import type { ProductCategory } from "@/lib/products";
 import { productCategories } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
@@ -95,12 +95,23 @@ export default function CategoryDetail({ category }: { category: ProductCategory
         <div className="max-w-7xl mx-auto">
           <div ref={ref} data-reveal-root className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.products.map((p) => (
-              <article key={p.sku} data-reveal className="reveal eyora-card rounded-3xl overflow-hidden flex flex-col">
+              <Link
+                key={p.sku}
+                href={`/products/${category.slug}/${p.sku}`}
+                data-reveal
+                className="reveal eyora-card rounded-3xl overflow-hidden flex flex-col group"
+              >
                 <div className="relative h-48 bg-white">
                   <Image src={p.image} alt={p.name} fill sizes="(max-width: 768px) 90vw, 380px" className="object-contain p-7" />
                   <span className="absolute top-4 left-4 eyora-badge px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
                     {p.megapixel}
                   </span>
+                  {p.datasheetFamily && (
+                    <span className="absolute top-4 right-4 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--text-accent)] bg-[var(--bg-tertiary)] border border-[var(--glass-border)] rounded-full px-2.5 py-1">
+                      <FileText size={11} />
+                      Datasheet
+                    </span>
+                  )}
                 </div>
                 <div className="p-6 flex flex-col flex-1 product-tile-bg">
                   <p className="text-[11px] font-mono text-[var(--text-muted)] tracking-wide">{p.sku}</p>
@@ -115,17 +126,12 @@ export default function CategoryDetail({ category }: { category: ProductCategory
                     ))}
                   </ul>
 
-                  <a
-                    href={whatsappLink(`Hi Eyora, I'd like a quote for ${p.sku} (${p.name}).`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 nav-link inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] w-fit"
-                  >
-                    Enquire on WhatsApp
-                    <span aria-hidden>→</span>
-                  </a>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-primary)] w-fit">
+                    View Details & Specs
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Sun, Aperture, ShieldCheck, Zap, HardDrive, Wifi } from "lucide-react";
+import { Sun, Aperture, ShieldCheck, Zap, HardDrive, Mic } from "lucide-react";
 import { useReveal } from "@/lib/useReveal";
 
 const FEATURES = [
@@ -10,7 +10,7 @@ const FEATURES = [
   { icon: ShieldCheck, title: "IP67 & IK10 Housings", desc: "Metal, weatherproof, vandal-resistant bodies rated for outdoor exposure and impact." },
   { icon: Zap, title: "PoE + DC12V Power", desc: "Single-cable PoE installs, with DC12V fallback for flexible power planning." },
   { icon: HardDrive, title: "H.265 Smart NVRs", desc: "6 to 32-channel recorders with H.265 compression and PoE ports built in, cutting storage and cabling costs." },
-  { icon: Wifi, title: "Dual-Band Wi-Fi Cube Cameras", desc: "2.4 & 5GHz cube cameras with PIR detection for cable-free indoor installs." },
+  { icon: Mic, title: "PoE Cube Cameras", desc: "Built-in mic, speaker and PIR detection, with two-way audio for indoor installs." },
 ];
 
 export default function Technology() {

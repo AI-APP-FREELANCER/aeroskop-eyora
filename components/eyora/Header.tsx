@@ -5,11 +5,10 @@ import Image from "next/image";
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/site";
 
 const NAV_LINKS = [
-  { label: "Products", href: "#products" },
+  { label: "Products", href: "/#products" },
   { label: "About", href: "/about" },
-  { label: "Industries", href: "#industries" },
-  { label: "Why Eyora", href: "#why-eyora" },
-  { label: "Contact", href: "#contact" },
+  { label: "Why Eyora", href: "/#why-eyora" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -30,7 +29,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-6xl mx-auto eyora-card rounded-full flex items-center justify-between h-16 px-3 md:px-3 md:pl-6">
-        <a href="#top" className="flex items-center gap-2 shrink-0">
+        <a href="/#top" className="flex items-center gap-2 shrink-0">
           <Image src="/images/eyora-logo.png" alt="Eyora" width={159} height={30} priority className="h-6 md:h-7 w-auto" />
         </a>
 

@@ -36,7 +36,7 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5">
             {productCategories.map((cat) => (
               <li key={cat.slug}>
-                <a href="#products" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+                <a href={`/products/${cat.slug}`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                   {cat.title}
                 </a>
               </li>
@@ -50,10 +50,9 @@ export default function Footer() {
           </h4>
           <ul className="mt-4 space-y-2.5">
             <li><a href="/about" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">About</a></li>
-            <li><a href="#technology" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Technology</a></li>
-            <li><a href="#industries" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Industries</a></li>
-            <li><a href="#why-eyora" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Why Eyora</a></li>
-            <li><a href="#contact" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Contact</a></li>
+            <li><a href="/#technology" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Technology</a></li>
+            <li><a href="/#why-eyora" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Why Eyora</a></li>
+            <li><a href="/#contact" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">Contact</a></li>
           </ul>
         </div>
       </div>

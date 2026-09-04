@@ -2,14 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   EYORA THEME: LIGHT GLASS & GLOW GREEN
+   Matches the eyora.netlify.app/template-2 design system —
+   white surfaces, dark slate text, vivid green as accent.
+   ========================================================= */
+
+:root {
+  /* --- Brand Core Colors (Derived from Eyora Logo) --- */
+  --eyora-green-light: #70d611;
+  --eyora-green-mid: #3d8b08;
+  --eyora-green-dark: #194303;
+  --eyora-green-deep: #091a01;
+
+  /* --- Page & Surfaces (Light) --- */
+  --bg-page: #f8faf6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef6e8;
+
+  /* --- Glassmorphism & Translucency (white glass) --- */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-strong: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(61, 139, 8, 0.16);
+  --glass-border-hover: rgba(61, 139, 8, 0.4);
+  --glass-backdrop-blur: blur(18px);
+
+  /* --- Gradients & Lighting Effects --- */
+  --gradient-eyora-brand: linear-gradient(135deg, #70d611 0%, #3d8b08 100%);
+  --gradient-glow-overlay: radial-gradient(circle at 50% 0%, rgba(112, 214, 17, 0.14) 0%, rgba(248, 250, 246, 0) 65%);
+  --gradient-surface: linear-gradient(180deg, rgba(112, 214, 17, 0.06) 0%, rgba(255, 255, 255, 0.9) 100%);
+
+  /* --- Shadows & Glow (green-tinted, like template) --- */
+  --shadow-glow-sm: 0 10px 24px rgba(61, 139, 8, 0.18);
+  --shadow-glow-md: 0 16px 36px rgba(61, 139, 8, 0.24);
+  --shadow-glow-lg: 0 24px 60px rgba(61, 139, 8, 0.28);
+  --shadow-card: 0 28px 80px rgba(14, 26, 8, 0.1);
+
+  /* --- Typography Colors --- */
+  --text-primary: #0e1a08;
+  --text-secondary: #4b5c45;
+  --text-muted: #8a9a82;
+  --text-accent: #3d8b08;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
+  background-color: var(--bg-page);
+  background-image: var(--gradient-glow-overlay);
+  background-attachment: fixed;
+  color: var(--text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #ffffff;
-  color: #0f172a;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 /* === Animations === */
@@ -22,59 +72,83 @@ body {
   to { opacity: 1; }
 }
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.93); }
+  from { opacity: 0; transform: scale(0.94); }
   to { opacity: 1; transform: scale(1); }
 }
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--shadow-glow-sm); }
+  50% { box-shadow: var(--shadow-glow-lg); }
+}
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.7s ease-out both;
-}
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out both;
-}
-.animate-scale-in {
-  animation: scaleIn 0.6s ease-out both;
-}
-.animate-float {
-  animation: float 3.5s ease-in-out infinite;
-}
+.animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out both; }
+.animate-scale-in { animation: scaleIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-float { animation: float 3.5s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
 
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 
-/* === Card hover === */
-.card-lift {
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1);
+/* === Scroll reveal (toggled via IntersectionObserver in useReveal) === */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
-.card-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.12);
-}
-
-.card-lift-sm {
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-.card-lift-sm:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.09);
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* === Button shine === */
+/* === Glassmorphic Card === */
+.eyora-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop-blur);
+  -webkit-backdrop-filter: var(--glass-backdrop-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.eyora-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-glow-sm), var(--shadow-card);
+  transform: translateY(-6px);
+}
+
+/* === Metallic / Glowing Text === */
+.eyora-text-gradient {
+  background: var(--gradient-eyora-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Surface panel with subtle top-lit gradient === */
+.eyora-surface {
+  background: var(--gradient-surface);
+  border: 1px solid var(--glass-border);
+}
+
+/* === Buttons (pill, like template) === */
 .btn-shine {
   position: relative;
   overflow: hidden;
@@ -86,46 +160,126 @@ body {
   left: -75%;
   width: 50%;
   height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
   transform: skewX(-15deg);
   transition: left 0.5s ease;
 }
-.btn-shine:hover::after {
-  left: 125%;
+.btn-shine:hover::after { left: 125%; }
+
+.btn-primary {
+  background: var(--gradient-eyora-brand);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: var(--shadow-glow-sm);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-primary:hover {
+  box-shadow: var(--shadow-glow-md);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: var(--glass-bg-strong);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border-hover);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: #ffffff;
+  box-shadow: var(--shadow-glow-sm);
 }
 
 /* === Image zoom === */
-.img-zoom {
-  overflow: hidden;
-}
-.img-zoom img {
-  transition: transform 0.55s ease;
-}
-.img-zoom:hover img {
-  transform: scale(1.07);
-}
-
-/* === Glass === */
-.glass {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+.img-zoom:hover img { transform: scale(1.06); }
 
 /* === Nav link underline === */
-.nav-link {
-  position: relative;
-}
+.nav-link { position: relative; color: var(--text-secondary); }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 2px;
-  background: currentColor;
+  background: var(--eyora-green-mid);
   transition: width 0.3s ease;
 }
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover { color: var(--text-primary); }
+.nav-link:hover::after { width: 100%; }
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-page); }
+::-webkit-scrollbar-thumb {
+  background: var(--eyora-green-light);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--eyora-green-mid); }
+
+/* === Section divider glow line === */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(112, 214, 17, 0.5), transparent);
+}
+
+/* === Product image tile background === */
+.product-tile-bg {
+  background: radial-gradient(circle at 50% 40%, rgba(112, 214, 17, 0.12) 0%, rgba(255, 255, 255, 0) 65%), var(--bg-tertiary);
+}
+
+/* === Badge pill === */
+.eyora-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: rgba(112, 214, 17, 0.12);
+  border: 1px solid rgba(61, 139, 8, 0.25);
+  color: var(--text-accent);
+}
+
+/* === Marquee strip === */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+/* === Vertical trust ribbon (like enterprise B2B "Proudly X" badges) === */
+.trust-ribbon {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.14em;
+}
+
+/* === Breadcrumb === */
+.breadcrumb-sep { color: var(--text-muted); }
+
+/* === CTA button with status dot (Aurora-style "Contact us") === */
+.btn-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.4rem 0.4rem 1.1rem;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+.btn-cta-pill:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--shadow-glow-sm);
+}
+.btn-cta-pill .cta-arrow {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--gradient-eyora-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
 }

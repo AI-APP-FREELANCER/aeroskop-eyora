@@ -809,4 +809,425 @@ export const datasheets: Record<string, Datasheet> = {
       },
     ],
   },
+
+  "poe-4p": {
+    pdfUrl: "/datasheets/eyr-ps4p1r1s.pdf",
+    warranty: "5 Year Warranty",
+    overview:
+      "The EYR-PS4P1R1S is a 4-port Gigabit PoE Ethernet switch designed for powering and connecting IP cameras, wireless access points and other PoE network devices. It provides four PoE ports, one Gigabit RJ45 uplink and one 1.25 Gbps SFP fibre uplink, with 12 Gbps non-blocking switching so every port runs at full speed at once. A total PoE budget of 65W makes it well suited to reliable surveillance and network installations.",
+    keyFeatures: [
+      "4 Gigabit PoE Ports — 65W Total Budget",
+      "All 4 Ports at 802.3af, or up to 2 at Full PoE+",
+      "12 Gbps Non-Blocking Switching",
+      "1 Gigabit RJ45 Uplink and 1× 1.25 Gbps SFP Fibre Uplink",
+      "IEEE 802.3af and 802.3at Compliant",
+      "Extended PoE Mode — up to 250m at 10Mbps",
+      "Auto MDI/MDI-X — No Crossover Cables Needed",
+      "Metal Housing",
+      "Plug and Play — No Configuration Required",
+      "5-Year Hardware Warranty",
+    ],
+    specSections: [
+      {
+        section: "Ports",
+        rows: [
+          { label: "PoE Ports", value: "4 × 10/100/1000Mbps RJ45, auto-negotiating" },
+          { label: "RJ45 Uplink", value: "1 × 10/100/1000Mbps RJ45" },
+          { label: "SFP Uplink", value: "1 × SFP, 1.25 Gbps" },
+          { label: "Total Ports", value: "6" },
+          { label: "Transmission Distance", value: "RJ45: up to 100m at 1000Mbps; SFP: per optical module specification" },
+          { label: "Transmission Media", value: "RJ45: Cat5e / Cat6 UTP; SFP: LC connector" },
+        ],
+      },
+      {
+        section: "Power Over Ethernet",
+        rows: [
+          { label: "PoE Standard", value: "IEEE 802.3af (15.4W) and IEEE 802.3at (30W)" },
+          { label: "PoE Method", value: "End-span (Mode A), pins 1/2 and 3/6" },
+          { label: "Total PoE Budget", value: "65W" },
+          { label: "Per-Port Output", value: "Up to 30W" },
+          { label: "Capacity at Full Load", value: "All 4 ports at 802.3af (up to 15W each), or up to 2 ports at 802.3at (30W)" },
+          { label: "PoE Port Detection", value: "Automatic — non-PoE devices receive data only" },
+        ],
+      },
+      {
+        section: "Switching",
+        rows: [
+          { label: "Network Standards", value: "IEEE 802.3 10BASE-T, IEEE 802.3u 100BASE-TX, IEEE 802.3ab 1000BASE-T" },
+          { label: "Switching Capacity", value: "12 Gbps, non-blocking" },
+          { label: "Forwarding Mode", value: "Store-and-forward" },
+          { label: "MAC Address Table", value: "8K entries" },
+          { label: "Jumbo Frame", value: "Up to 10K bytes" },
+          { label: "Auto MDI/MDI-X", value: "Supported — straight or crossover cables" },
+          { label: "Management", value: "Unmanaged — plug and play" },
+        ],
+      },
+      {
+        section: "Power",
+        rows: [
+          { label: "Power Supply", value: "External adapter" },
+          { label: "Input Voltage", value: "AC 100–240V, 50/60Hz" },
+          { label: "Power Consumption", value: "Switch: <5W; total with PoE: <70W" },
+        ],
+      },
+      {
+        section: "Indicators",
+        rows: [
+          { label: "Power", value: "1 × green LED" },
+          { label: "SFP Link", value: "1 × green LED, on when linked" },
+          { label: "PoE Status", value: "4 × yellow LED, one per PoE port" },
+          { label: "Link / Activity", value: "4 × green LED on RJ45 jack — on when linked, flashing on data" },
+        ],
+      },
+      {
+        section: "Protection",
+        rows: [
+          { label: "Surge Immunity", value: "Level 3, IEC 61000-4-5" },
+          { label: "Electrostatic Discharge", value: "Contact Level 3, Air Level 3, IEC 61000-4-2" },
+        ],
+      },
+      {
+        section: "Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−10°C to +55°C" },
+          { label: "Storage Temperature", value: "−40°C to +85°C" },
+          { label: "Operating Humidity", value: "0% – 95% RH (non-condensing)" },
+          { label: "Cooling", value: "Fanless" },
+        ],
+      },
+      {
+        section: "Mechanical",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "202 × 140 × 45 mm" },
+          { label: "Housing", value: "Metal" },
+          { label: "Colour", value: "Black" },
+          { label: "Weight", value: "1 kg" },
+          { label: "Mounting", value: "Desktop, wall, or rack mount with additional mounting bracket" },
+        ],
+      },
+    ],
+  },
+
+  "poe-8p": {
+    pdfUrl: "/datasheets/eyr-808gp1g1sfp.pdf",
+    warranty: "5 Year Warranty",
+    overview:
+      "The EYR-808GP1G1SFP is an 8-port Gigabit PoE Ethernet switch designed for powering and connecting IP cameras, wireless access points and other PoE network devices. It provides eight PoE ports, one Gigabit RJ45 uplink and one 1.25 Gbps SFP fibre uplink, with 24 Gbps non-blocking switching so every port runs at full speed at once. A total PoE budget of 120W makes it well suited to small and medium surveillance installations.",
+    keyFeatures: [
+      "8 Gigabit PoE Ports — 120W Total Budget",
+      "All 8 Ports at 802.3af, or up to 4 at Full PoE+",
+      "24 Gbps Non-Blocking Switching",
+      "1 Gigabit RJ45 Uplink and 1× 1.25 Gbps SFP Fibre Uplink",
+      "IEEE 802.3af and 802.3at Compliant",
+      "Fanless — Silent Operation, No Moving Parts",
+      "Metal Housing",
+      "Surge Protection to IEC 61000-4-5 Level 3",
+      "Plug and Play — No Configuration Required",
+      "5-Year Hardware Warranty",
+    ],
+    specSections: [
+      {
+        section: "Ports",
+        rows: [
+          { label: "PoE Ports", value: "8 × 10/100/1000Mbps RJ45, auto-negotiating" },
+          { label: "RJ45 Uplink", value: "1 × 10/100/1000Mbps RJ45" },
+          { label: "SFP Uplink", value: "1 × SFP, 1.25 Gbps" },
+          { label: "Total Ports", value: "10" },
+          { label: "Transmission Distance", value: "RJ45: up to 100m; SFP: per optical module specification" },
+          { label: "Transmission Media", value: "RJ45: Cat5e / Cat6 UTP; SFP: LC connector" },
+        ],
+      },
+      {
+        section: "Power Over Ethernet",
+        rows: [
+          { label: "PoE Standard", value: "IEEE 802.3af (15.4W) and IEEE 802.3at (30W)" },
+          { label: "PoE Method", value: "End-span (Mode A), pins 1/2 and 3/6" },
+          { label: "Total PoE Budget", value: "120W" },
+          { label: "Per-Port Output", value: "Up to 30W" },
+          { label: "Capacity at Full Load", value: "All 8 ports at 802.3af (up to 15W each), or up to 4 ports at 802.3at (30W)" },
+          { label: "PoE Port Detection", value: "Automatic — non-PoE devices receive data only" },
+        ],
+      },
+      {
+        section: "Switching",
+        rows: [
+          { label: "Network Standards", value: "IEEE 802.3 10BASE-T, IEEE 802.3u 100BASE-TX, IEEE 802.3ab 1000BASE-T" },
+          { label: "Switching Capacity", value: "24 Gbps, non-blocking" },
+          { label: "Forwarding Mode", value: "Store-and-forward" },
+          { label: "MAC Address Table", value: "8K entries" },
+          { label: "Jumbo Frame", value: "Up to 9,216 bytes" },
+          { label: "Auto MDI/MDI-X", value: "Supported — straight or crossover cables" },
+          { label: "Management", value: "Unmanaged — plug and play" },
+        ],
+      },
+      {
+        section: "Power",
+        rows: [
+          { label: "Input Voltage", value: "AC 100–240V, 50/60Hz" },
+          { label: "Internal Supply", value: "DC 52V" },
+          { label: "Power Consumption", value: "Switch: <5W; total with PoE: <125W" },
+        ],
+      },
+      {
+        section: "Indicators",
+        rows: [
+          { label: "Power", value: "1 × green LED" },
+          { label: "SFP Link", value: "1 × green LED, on when linked" },
+          { label: "PoE Status", value: "8 × yellow LED, one per PoE port" },
+          { label: "Link / Activity", value: "8 × green LED on RJ45 jack — on when linked, flashing on data" },
+        ],
+      },
+      {
+        section: "Protection",
+        rows: [
+          { label: "Surge Immunity", value: "Level 3, IEC 61000-4-5" },
+          { label: "Electrostatic Discharge", value: "Contact Level 3, Air Level 3, IEC 61000-4-2" },
+        ],
+      },
+      {
+        section: "Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−10°C to +55°C" },
+          { label: "Storage Temperature", value: "−40°C to +85°C" },
+          { label: "Operating Humidity", value: "0% – 95% RH (non-condensing)" },
+          { label: "Cooling", value: "Fanless" },
+        ],
+      },
+      {
+        section: "Mechanical",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "202 × 140 × 45 mm" },
+          { label: "Housing", value: "Metal" },
+          { label: "Colour", value: "Black" },
+          { label: "Weight", value: "1.5 kg" },
+          { label: "Mounting", value: "Desktop or wall; rack-mountable with optional brackets" },
+        ],
+      },
+      {
+        section: "Reliability & Compliance",
+        rows: [
+          { label: "MTBF", value: "> 50,000 hours" },
+          { label: "Warranty", value: "5 years, hardware" },
+          { label: "Certifications", value: "CE, FCC, RoHS" },
+          { label: "Country of Origin", value: "Made in Bahrain — certificate of origin available" },
+        ],
+      },
+    ],
+  },
+
+  "poe-16p": {
+    pdfUrl: "/datasheets/eyr-816gp1g1sfp.pdf",
+    warranty: "5 Year Warranty",
+    overview:
+      "The EYR-816GP1G1SFP is a 16-port Gigabit PoE Ethernet switch designed for powering and connecting IP cameras, wireless access points and other PoE network devices. It provides sixteen PoE ports, one Gigabit RJ45 uplink and one 1.25 Gbps SFP fibre uplink, with 40 Gbps non-blocking switching so every port runs at full speed at once. A 300W PoE budget runs all sixteen ports at 802.3af, or up to ten devices at full PoE+ for cameras with heaters or illuminators. The 1U metal chassis mounts in a standard rack.",
+    keyFeatures: [
+      "16 Gigabit PoE Ports — 300W Total Budget",
+      "All 16 Ports at 802.3af, or up to 10 at Full PoE+",
+      "40 Gbps Non-Blocking Switching",
+      "1 Gigabit RJ45 Uplink and 1× 1.25 Gbps SFP Fibre Uplink",
+      "IEEE 802.3af and 802.3at Compliant",
+      "Fanless — Silent Operation, No Moving Parts",
+      "1U Metal Chassis, Rack Ears Supplied",
+      "Surge Protection to IEC 61000-4-5 Level 3",
+      "Plug and Play — No Configuration Required",
+      "5-Year Hardware Warranty",
+    ],
+    specSections: [
+      {
+        section: "Ports",
+        rows: [
+          { label: "PoE Ports", value: "16 × 10/100/1000Mbps RJ45, auto-negotiating" },
+          { label: "RJ45 Uplink", value: "1 × 10/100/1000Mbps RJ45" },
+          { label: "SFP Uplink", value: "1 × SFP, 1.25 Gbps" },
+          { label: "Total Ports", value: "18" },
+          { label: "Transmission Distance", value: "RJ45: up to 100m; SFP: per optical module specification" },
+          { label: "Transmission Media", value: "RJ45: Cat5e / Cat6 UTP; SFP: LC connector" },
+        ],
+      },
+      {
+        section: "Power Over Ethernet",
+        rows: [
+          { label: "PoE Standard", value: "IEEE 802.3af (15.4W) and IEEE 802.3at (30W)" },
+          { label: "PoE Method", value: "End-span (Mode A), pins 1/2 and 3/6" },
+          { label: "Total PoE Budget", value: "300W" },
+          { label: "Per-Port Output", value: "Up to 30W" },
+          { label: "Capacity at Full Load", value: "All 16 ports at 802.3af (up to 15W each), or up to 10 ports at 802.3at (30W)" },
+          { label: "PoE Port Detection", value: "Automatic — non-PoE devices receive data only" },
+        ],
+      },
+      {
+        section: "Switching",
+        rows: [
+          { label: "Network Standards", value: "IEEE 802.3 10BASE-T, IEEE 802.3u 100BASE-TX, IEEE 802.3ab 1000BASE-T, IEEE 802.3z 1000BASE-SX/LX" },
+          { label: "Switching Capacity", value: "40 Gbps, non-blocking" },
+          { label: "Forwarding Mode", value: "Store-and-forward" },
+          { label: "Flow Control", value: "IEEE 802.3x full duplex, back pressure half duplex" },
+          { label: "MAC Address Table", value: "8K entries" },
+          { label: "Jumbo Frame", value: "Up to 9,216 bytes" },
+          { label: "Auto MDI/MDI-X", value: "Supported — straight or crossover cables" },
+          { label: "Management", value: "Unmanaged — plug and play" },
+        ],
+      },
+      {
+        section: "Power",
+        rows: [
+          { label: "Input Voltage", value: "AC 100–240V, 50/60Hz" },
+          { label: "Power Consumption", value: "Switch: <15W; total with PoE: <315W" },
+        ],
+      },
+      {
+        section: "Indicators",
+        rows: [
+          { label: "Power", value: "1 × green LED" },
+          { label: "SFP Link", value: "1 × green LED, on when linked" },
+          { label: "Uplink Port", value: "1 × LED, flashing on data activity" },
+          { label: "PoE Status", value: "16 × LED, one per PoE port" },
+          { label: "Link / Activity", value: "16 × green LED on RJ45 jack — on when linked, flashing on data" },
+        ],
+      },
+      {
+        section: "Protection",
+        rows: [
+          { label: "Surge Immunity", value: "Level 3, IEC 61000-4-5" },
+          { label: "Electrostatic Discharge", value: "Contact Level 3, Air Level 3, IEC 61000-4-2" },
+        ],
+      },
+      {
+        section: "Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−10°C to +55°C" },
+          { label: "Storage Temperature", value: "−40°C to +85°C" },
+          { label: "Operating Humidity", value: "5% – 95% RH (non-condensing)" },
+          { label: "Cooling", value: "Fanless" },
+        ],
+      },
+      {
+        section: "Mechanical",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "330 × 205 × 44.5 mm" },
+          { label: "Rack Height", value: "1U" },
+          { label: "Housing", value: "Metal" },
+          { label: "Colour", value: "Black" },
+          { label: "Weight", value: "3 kg" },
+          { label: "Rack Ears", value: "Supplied in the box" },
+        ],
+      },
+      {
+        section: "Reliability & Compliance",
+        rows: [
+          { label: "MTBF", value: "> 50,000 hours" },
+          { label: "Warranty", value: "5 years, hardware" },
+          { label: "Certifications", value: "CE, FCC, RoHS" },
+          { label: "Country of Origin", value: "Made in Bahrain — certificate of origin available" },
+        ],
+      },
+    ],
+  },
+
+  "poe-24p": {
+    pdfUrl: "/datasheets/eyr-824gp1g1sfp.pdf",
+    warranty: "5 Year Warranty",
+    overview:
+      "The EYR-824GP1G1SFP is a 24-port Gigabit PoE Ethernet switch designed for powering and connecting IP cameras, wireless access points and other PoE network devices. It provides twenty-four PoE ports, one Gigabit RJ45 uplink and one 1.25 Gbps SFP fibre uplink, with 56 Gbps non-blocking switching so every port runs at full speed at once. A 320W PoE budget runs all twenty-four ports at up to 13W each — comfortably above what a typical IP camera draws — or up to ten devices at full PoE+. The 19-inch 1U metal chassis mounts in a standard rack.",
+    keyFeatures: [
+      "24 Gigabit PoE Ports — 320W Total Budget",
+      "All 24 Ports at up to 13W Each, or up to 10 at Full PoE+",
+      "56 Gbps Non-Blocking Switching",
+      "1 Gigabit RJ45 Uplink and 1× 1.25 Gbps SFP Fibre Uplink",
+      "IEEE 802.3af and 802.3at Compliant",
+      "19-inch 1U Metal Chassis, Rack Ears Supplied",
+      "Surge Protection to IEC 61000-4-5 Level 3",
+      "Plug and Play — No Configuration Required",
+      "5-Year Hardware Warranty",
+    ],
+    specSections: [
+      {
+        section: "Ports",
+        rows: [
+          { label: "PoE Ports", value: "24 × 10/100/1000Mbps RJ45, auto-negotiating" },
+          { label: "RJ45 Uplink", value: "1 × 10/100/1000Mbps RJ45" },
+          { label: "SFP Uplink", value: "1 × SFP, 1.25 Gbps" },
+          { label: "Total Ports", value: "26" },
+          { label: "Transmission Distance", value: "RJ45: up to 100m; SFP: per optical module specification" },
+          { label: "Transmission Media", value: "RJ45: Cat5e / Cat6 UTP; SFP: LC connector" },
+        ],
+      },
+      {
+        section: "Power Over Ethernet",
+        rows: [
+          { label: "PoE Standard", value: "IEEE 802.3af (15.4W) and IEEE 802.3at (30W)" },
+          { label: "PoE Method", value: "End-span (Mode A), pins 1/2 and 3/6" },
+          { label: "Total PoE Budget", value: "320W" },
+          { label: "Per-Port Output", value: "Up to 30W" },
+          { label: "Capacity at Full Load", value: "All 24 ports at up to 13W each, or up to 10 ports at 802.3at (30W)" },
+          { label: "PoE Port Detection", value: "Automatic — non-PoE devices receive data only" },
+        ],
+      },
+      {
+        section: "Switching",
+        rows: [
+          { label: "Network Standards", value: "IEEE 802.3 10BASE-T, IEEE 802.3u 100BASE-TX, IEEE 802.3ab 1000BASE-T, IEEE 802.3z 1000BASE-SX/LX" },
+          { label: "Switching Capacity", value: "56 Gbps, non-blocking" },
+          { label: "Forwarding Mode", value: "Store-and-forward" },
+          { label: "Flow Control", value: "IEEE 802.3x full duplex, back pressure half duplex" },
+          { label: "MAC Address Table", value: "8K entries" },
+          { label: "Jumbo Frame", value: "Up to 9,216 bytes" },
+          { label: "Auto MDI/MDI-X", value: "Supported — straight or crossover cables" },
+          { label: "Management", value: "Unmanaged — plug and play" },
+        ],
+      },
+      {
+        section: "Power",
+        rows: [
+          { label: "Input Voltage", value: "AC 100–240V, 50/60Hz" },
+          { label: "Power Consumption", value: "Switch: <15W; total with PoE: <335W" },
+        ],
+      },
+      {
+        section: "Indicators",
+        rows: [
+          { label: "Power", value: "1 × green LED" },
+          { label: "SFP Link", value: "1 × green LED, on when linked" },
+          { label: "Uplink Port", value: "1 × green LED, on when linked" },
+          { label: "PoE Status", value: "24 × LED, one per PoE port" },
+          { label: "Link / Activity", value: "24 × green LED on RJ45 jack — on when linked, flashing on data" },
+        ],
+      },
+      {
+        section: "Protection",
+        rows: [
+          { label: "Surge Immunity", value: "Level 3, IEC 61000-4-5" },
+          { label: "Electrostatic Discharge", value: "Contact Level 3, Air Level 3, IEC 61000-4-2" },
+        ],
+      },
+      {
+        section: "Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−10°C to +55°C" },
+          { label: "Storage Temperature", value: "−40°C to +85°C" },
+          { label: "Operating Humidity", value: "5% – 95% RH (non-condensing)" },
+          { label: "Cooling", value: "Fanless" },
+        ],
+      },
+      {
+        section: "Mechanical",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "442 × 224 × 44.5 mm" },
+          { label: "Rack Format", value: "19-inch, 1U" },
+          { label: "Housing", value: "Metal" },
+          { label: "Colour", value: "Black" },
+          { label: "Weight", value: "4.5 kg" },
+          { label: "Rack Ears", value: "Supplied in the box" },
+        ],
+      },
+      {
+        section: "Reliability & Compliance",
+        rows: [
+          { label: "MTBF", value: "> 50,000 hours" },
+          { label: "Warranty", value: "5 years, hardware" },
+          { label: "Certifications", value: "CE, FCC, RoHS" },
+        ],
+      },
+    ],
+  },
 };

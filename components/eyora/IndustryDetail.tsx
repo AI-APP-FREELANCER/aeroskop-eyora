@@ -156,6 +156,43 @@ function FeatureCards({ ind }: { ind: Industry }) {
   );
 }
 
+function OfficeFloorplanArt() {
+  return (
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+      <rect x="0" y="0" width="100" height="100" fill="#f3ede0" />
+      <rect x="2" y="4" width="96" height="92" rx="2" fill="none" stroke="#c9c0a8" strokeWidth="0.6" />
+
+      {/* Partitions */}
+      <line x1="30" y1="4" x2="30" y2="96" stroke="#c9c0a8" strokeWidth="0.5" />
+      <line x1="66" y1="4" x2="66" y2="65" stroke="#c9c0a8" strokeWidth="0.5" />
+      <line x1="66" y1="42" x2="98" y2="42" stroke="#c9c0a8" strokeWidth="0.5" />
+      <rect x="30" y="65" width="36" height="31" fill="none" stroke="#c9c0a8" strokeWidth="0.5" />
+
+      {/* Reception: entrance arc + desk */}
+      <path d="M 2 46 A 10 10 0 0 1 12 56" fill="none" stroke="#9fae8e" strokeWidth="0.6" />
+      <rect x="6" y="66" width="16" height="7" rx="1" fill="none" stroke="#7f8f6c" strokeWidth="0.6" />
+      <circle cx="14" cy="60" r="1.1" fill="#7f8f6c" />
+
+      {/* Office floor: desk clusters */}
+      {[[36, 14], [48, 14], [60, 14], [36, 28], [48, 28], [60, 28]].map(([x, y]) => (
+        <rect key={`${x}-${y}`} x={x} y={y} width="8" height="5" rx="0.6" fill="none" stroke="#7f8f6c" strokeWidth="0.5" />
+      ))}
+
+      {/* Meeting rooms: two rooms with tables */}
+      <ellipse cx="82" cy="20" rx="7" ry="3.2" fill="none" stroke="#7f8f6c" strokeWidth="0.6" />
+      <ellipse cx="82" cy="55" rx="7" ry="3.2" fill="none" stroke="#7f8f6c" strokeWidth="0.6" />
+
+      {/* Server room: rack icon */}
+      {[40, 46, 52, 58].map((x) => (
+        <rect key={x} x={x} y="76" width="4" height="14" rx="0.5" fill="none" stroke="#7f8f6c" strokeWidth="0.6" />
+      ))}
+      {[40, 46, 52, 58].map((x) => (
+        <circle key={`dot-${x}`} cx={x + 2} cy="79" r="0.5" fill="var(--eyora-green-mid)" />
+      ))}
+    </svg>
+  );
+}
+
 function Floorplan({ ind }: { ind: Industry }) {
   if (!ind.floorplan) return null;
   return (
@@ -164,21 +201,15 @@ function Floorplan({ ind }: { ind: Industry }) {
         <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-accent)]">{ind.floorplan.title}</p>
         <p className="text-xs text-[var(--text-muted)]">{ind.floorplan.subtitle}</p>
       </div>
-      <div
-        className="relative h-56 rounded-xl border border-[var(--glass-border)] overflow-hidden"
-        style={{
-          backgroundImage: "radial-gradient(rgba(61,139,8,0.18) 1px, transparent 1px)",
-          backgroundSize: "18px 18px",
-          backgroundColor: "var(--bg-tertiary)",
-        }}
-      >
+      <div className="relative h-56 rounded-xl border border-[var(--glass-border)] overflow-hidden">
+        <OfficeFloorplanArt />
         {ind.floorplan.points.map((pt) => (
           <span
             key={pt.label}
             className="absolute inline-flex items-center gap-1.5 -translate-x-1/2 -translate-y-1/2"
             style={{ top: pt.top, left: pt.left }}
           >
-            <span className="w-2 h-2 rounded-full bg-[var(--eyora-green-mid)] shrink-0" />
+            <span className="w-2 h-2 rounded-full bg-[var(--eyora-green-mid)] shrink-0 shadow-[0_0_0_3px_rgba(112,214,17,0.25)]" />
             <span className="rounded-full bg-white border border-[var(--glass-border)] text-[10px] font-semibold text-[var(--text-primary)] px-2.5 py-1 whitespace-nowrap shadow-sm">
               {pt.label}
             </span>
@@ -193,7 +224,7 @@ function ProcessAndStats({ ind }: { ind: Industry }) {
   if (!ind.processSteps || !ind.statTiles) return null;
   return (
     <>
-      <div className="eyora-card !bg-white/5 !border-white/10 rounded-2xl px-6 py-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+      <div className="rounded-2xl px-6 py-4 flex flex-wrap items-center gap-x-3 gap-y-2 bg-white/[0.07] border border-white/10">
         {ind.processSteps.map((step, i) => (
           <span key={step} className="flex items-center gap-3">
             <span className="flex items-center gap-2">
@@ -206,7 +237,7 @@ function ProcessAndStats({ ind }: { ind: Industry }) {
       </div>
       <div className="grid grid-cols-2 gap-3">
         {ind.statTiles.map((s) => (
-          <div key={s.label} className="eyora-card !bg-white/5 !border-white/10 rounded-2xl p-5">
+          <div key={s.label} className="rounded-2xl p-5 bg-white/[0.07] border border-white/10">
             <p className="text-2xl font-bold text-[var(--eyora-green-light)]">{s.value}</p>
             <p className="mt-1 text-[10px] font-semibold uppercase tracking-wide text-white/50">{s.label}</p>
           </div>
@@ -219,7 +250,7 @@ function ProcessAndStats({ ind }: { ind: Industry }) {
 function CoverageAndProducts({ ind }: { ind: Industry }) {
   const dark = ind.theme === "dark";
   const [left, right] = splitColumns(ind.coverageAreas);
-  const cardCls = dark ? "eyora-card !bg-white/5 !border-white/10 rounded-2xl p-6" : "eyora-card rounded-2xl p-6";
+  const cardCls = dark ? "rounded-2xl p-6 bg-white/[0.07] border border-white/10" : "eyora-card rounded-2xl p-6";
   const labelCls = dark ? "text-[var(--eyora-green-light)]" : "text-[var(--text-accent)]";
   const itemCls = dark ? "text-white/80" : "text-[var(--text-secondary)]";
   const numCls = dark ? "text-[var(--eyora-green-light)]" : "text-[var(--text-accent)]";
@@ -428,22 +459,23 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
                 <Floorplan ind={ind} />
               </div>
             )}
+
+            <div className="mt-10">
+              <CoverageAndProducts ind={ind} />
+            </div>
+
+            <div className="mt-8">
+              <Link
+                href="/#industries"
+                className={`inline-flex items-center gap-1.5 text-sm font-semibold ${
+                  dark ? "text-[var(--eyora-green-light)]" : "text-[var(--text-accent)]"
+                }`}
+              >
+                <ArrowLeft size={15} />
+                Back to all industries
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 md:px-8 pb-10">
-        <div className="max-w-7xl mx-auto">
-          <CoverageAndProducts ind={ind} />
-        </div>
-      </section>
-
-      <section className="px-5 md:px-8 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <Link href="/#industries" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--text-accent)]">
-            <ArrowLeft size={15} />
-            Back to all industries
-          </Link>
         </div>
       </section>
     </>

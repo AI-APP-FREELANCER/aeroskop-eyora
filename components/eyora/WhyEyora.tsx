@@ -44,11 +44,11 @@ export default function WhyEyora() {
 
         <div className="relative aspect-square rounded-[2rem] overflow-hidden eyora-card product-tile-bg">
           <Image
-            src="/images/products/box-camera.png"
-            alt="Eyora box camera"
+            src="/images/products/dome-camera-varifocal-family.png"
+            alt="Eyora dome camera"
             fill
-            sizes="(max-width: 1024px) 90vw, 520px"
-            className="object-contain p-10"
+            sizes="(max-width: 1024px) 90vw, 480px"
+            className="object-contain p-8"
           />
         </div>
       </div>

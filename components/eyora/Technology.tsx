@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Sun, Aperture, ShieldCheck, Zap, HardDrive, Mic } from "lucide-react";
 import { useReveal } from "@/lib/useReveal";
 
@@ -18,8 +17,8 @@ export default function Technology() {
 
   return (
     <section id="technology" className="px-5 md:px-8 py-24 md:py-32 relative">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        <div className="reveal is-visible">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-2xl reveal is-visible">
           <div className="eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5">
             Built In, Not Bolted On
           </div>
@@ -29,34 +28,18 @@ export default function Technology() {
           <p className="mt-4 text-[var(--text-secondary)] text-base md:text-lg leading-relaxed max-w-lg">
             Every spec below ships standard across the relevant Eyora range — not a premium add-on.
           </p>
-
-          <div ref={ref} data-reveal-root className="mt-10 grid sm:grid-cols-2 gap-5">
-            {FEATURES.map((f) => (
-              <div key={f.title} data-reveal className="reveal eyora-card rounded-2xl p-5">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center eyora-badge !px-0 !py-0 mb-3">
-                  <f.icon size={16} />
-                </div>
-                <h3 className="text-sm font-bold text-[var(--text-primary)]">{f.title}</h3>
-                <p className="mt-1.5 text-sm text-[var(--text-secondary)] leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="relative">
-          <div
-            className="absolute inset-0 rounded-[2rem] scale-90"
-            style={{ background: "var(--gradient-surface)", boxShadow: "var(--shadow-glow-md)" }}
-          />
-          <div className="relative aspect-[4/5] rounded-[2rem] eyora-card overflow-hidden product-tile-bg">
-            <Image
-              src="/images/products/fisheye-camera.png"
-              alt="Eyora 360 panoramic camera"
-              fill
-              sizes="(max-width: 1024px) 90vw, 520px"
-              className="object-contain p-10"
-            />
-          </div>
+        <div ref={ref} data-reveal-root className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {FEATURES.map((f) => (
+            <div key={f.title} data-reveal className="reveal eyora-card rounded-2xl p-5">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center eyora-badge !px-0 !py-0 mb-3">
+                <f.icon size={16} />
+              </div>
+              <h3 className="text-sm font-bold text-[var(--text-primary)]">{f.title}</h3>
+              <p className="mt-1.5 text-sm text-[var(--text-secondary)] leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

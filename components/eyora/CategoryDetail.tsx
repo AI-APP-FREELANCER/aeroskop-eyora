@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, Check, FileText } from "lucide-react";
+import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, Check, FileText } from "lucide-react";
 import type { ProductCategory } from "@/lib/products";
 import { productCategories } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
@@ -12,6 +12,7 @@ const ICONS: Record<string, typeof Camera> = {
   "bullet-cameras": Camera,
   "dome-cameras": DoorClosed,
   "turret-cameras": Aperture,
+  "ptz-cameras": RadarIcon,
   "wifi-cameras": Wifi,
   nvr: HardDrive,
   "poe-switches": Network,

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, ArrowRight } from "lucide-react";
+import { Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, ArrowRight } from "lucide-react";
 import { productCategories, totalProductCount } from "@/lib/products";
 import { useReveal } from "@/lib/useReveal";
 
@@ -10,6 +10,7 @@ const ICONS: Record<string, typeof Camera> = {
   "bullet-cameras": Camera,
   "dome-cameras": DoorClosed,
   "turret-cameras": Aperture,
+  "ptz-cameras": RadarIcon,
   "wifi-cameras": Wifi,
   nvr: HardDrive,
   "poe-switches": Network,
@@ -26,7 +27,7 @@ export default function ProductPortfolio() {
             Product Portfolio
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
-            {totalProductCount} models across six product lines.
+            {totalProductCount} models across seven product lines.
           </h2>
         </div>
 

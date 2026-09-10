@@ -27,9 +27,9 @@ const SLIDES = [
     ctaHref: "#products",
     image: "/images/products/nvr.png",
     badges: [
-      { label: "Channels", value: "6 – 32 CH", pos: "top-10 -left-5" },
+      { label: "Channels", value: "4 – 32 CH", pos: "top-10 -left-5" },
       { label: "Warranty", value: "5 Years", pos: "top-10 -right-5" },
-      { label: "Compression", value: "H.264 & H.265", pos: "bottom-12 -left-5" },
+      { label: "Compression", value: "Ultra 265, H.264 & H.265", pos: "bottom-12 -left-5" },
     ],
   },
   {

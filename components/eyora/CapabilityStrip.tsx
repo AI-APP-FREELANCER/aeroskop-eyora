@@ -2,7 +2,7 @@ import { Aperture, HardDrive, ShieldCheck, Network } from "lucide-react";
 
 const CAPABILITIES = [
   { icon: Aperture, value: "2–8MP", label: "Resolution range" },
-  { icon: HardDrive, value: "6–32 CH", label: "NVR channel options" },
+  { icon: HardDrive, value: "4–32 CH", label: "NVR channel options" },
   { icon: ShieldCheck, value: "IP67 / IK10", label: "Weatherproof & vandal rated" },
   { icon: Network, value: "4–24 Port", label: "PoE switch range" },
 ];

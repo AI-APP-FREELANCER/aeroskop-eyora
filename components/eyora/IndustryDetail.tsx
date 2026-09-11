@@ -101,7 +101,7 @@ function TextBlock({ ind }: { ind: Industry }) {
 function PhotoPanel({ ind, aspect = "aspect-[4/3]" }: { ind: Industry; aspect?: string }) {
   return (
     <div className={`relative ${aspect} rounded-[1.5rem] overflow-hidden eyora-card`}>
-      <Image src={ind.image} alt={ind.imageAlt} fill sizes="(max-width: 1024px) 90vw, 640px" className="object-cover" />
+      <Image src={ind.image} alt={ind.imageAlt} fill quality={92} sizes="(max-width: 1024px) 90vw, 640px" className="object-cover" />
       {ind.pins?.map((pin) => (
         <span
           key={pin.label}
@@ -358,7 +358,7 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
             {ind.heroVariant === "overlay" && (
               <div>
                 <div className="relative aspect-[16/9] rounded-[1.5rem] overflow-hidden">
-                  <Image src={ind.image} alt={ind.imageAlt} fill sizes="(max-width: 1024px) 95vw, 1100px" className="object-cover" />
+                  <Image src={ind.image} alt={ind.imageAlt} fill quality={92} sizes="(max-width: 1024px) 95vw, 1100px" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <div className="eyora-badge !bg-white/15 !border-white/25 !text-white px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-4">

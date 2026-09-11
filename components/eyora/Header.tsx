@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Calculator } from "lucide-react";
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/site";
 
 const NAV_LINKS = [
@@ -42,7 +44,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center">
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            href="/ai-storage-calculator"
+            className="btn-outline rounded-full pl-4 pr-5 py-2.5 text-sm font-semibold inline-flex items-center gap-2"
+          >
+            <Calculator size={15} />
+            AI Storage Calculator
+          </Link>
           <a
             href={whatsappLink(DEFAULT_WHATSAPP_MESSAGE)}
             target="_blank"
@@ -73,6 +82,14 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <Link
+            href="/ai-storage-calculator"
+            onClick={() => setMenuOpen(false)}
+            className="btn-outline rounded-full px-5 py-2.5 text-sm font-semibold text-center inline-flex items-center justify-center gap-2"
+          >
+            <Calculator size={15} />
+            AI Storage Calculator
+          </Link>
           <a
             href={whatsappLink(DEFAULT_WHATSAPP_MESSAGE)}
             target="_blank"

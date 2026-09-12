@@ -70,8 +70,14 @@ else
 fi
 echo ""
 
-# ── Step 6: Remove old build artifacts ───────────────────────────────────────
+# ── Step 6: Remove old build artifacts (keep the image-optimizer cache) ─────
 echo "Step 6: Removing old build artifacts..."
+IMAGE_CACHE_BACKUP="/tmp/eyora-image-cache-backup"
+sudo rm -rf "$IMAGE_CACHE_BACKUP" 2>/dev/null || true
+if [ -d "$APP_DIR/.next/cache/images" ]; then
+    echo "  Preserving existing image cache across this deploy..."
+    sudo cp -a "$APP_DIR/.next/cache/images" "$IMAGE_CACHE_BACKUP"
+fi
 sudo rm -rf "$APP_DIR/.next" 2>/dev/null || true
 sudo -u "$APP_USER" rm -rf "$APP_DIR/node_modules/.cache" 2>/dev/null || true
 echo "✓ Build artifacts removed"
@@ -89,8 +95,14 @@ sudo -u "$APP_USER" bash -c "cd '$APP_DIR' && npm run build"
 echo "✓ Build complete"
 echo ""
 
-# ── Step 9: Fix build ownership and permissions ───────────────────────────────
-echo "Step 9: Setting correct ownership and permissions..."
+# ── Step 9: Restore the image cache, then fix ownership and permissions ──────
+echo "Step 9: Restoring image cache and setting permissions..."
+if [ -d "$IMAGE_CACHE_BACKUP" ]; then
+    sudo mkdir -p "$APP_DIR/.next/cache"
+    sudo cp -a "$IMAGE_CACHE_BACKUP" "$APP_DIR/.next/cache/images"
+    sudo rm -rf "$IMAGE_CACHE_BACKUP"
+    echo "  ✓ Restored previously-cached image variants"
+fi
 sudo chown -R "$APP_USER:$APP_USER" "$APP_DIR/.next"
 sudo chmod -R o+rX "$APP_DIR/.next"
 sudo chmod o+x /home/aeroskopuser
@@ -113,6 +125,14 @@ echo ""
 echo "Step 12: Verifying Eyora is listening on port ${PORT}..."
 if sudo ss -tulpn 2>/dev/null | grep -q :${PORT} || sudo netstat -tulpn 2>/dev/null | grep -q :${PORT}; then
     echo "✓ Eyora is listening on port ${PORT}"
+
+    if [ -f "$APP_DIR/warm-image-cache.sh" ]; then
+        echo ""
+        echo "Warming the image-optimizer cache so the first real visitor never pays"
+        echo "for a cold resize (this reads every prerendered page's image URLs and"
+        echo "requests them locally before traffic arrives)..."
+        sudo -u "$APP_USER" bash -c "cd '$APP_DIR' && bash warm-image-cache.sh $PORT" || echo "⚠  Cache warm-up failed — non-fatal, continuing"
+    fi
 else
     echo "⚠  Eyora may not be on port ${PORT} yet — check logs below"
 fi

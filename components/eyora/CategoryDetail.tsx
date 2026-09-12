@@ -7,6 +7,7 @@ import type { ProductCategory } from "@/lib/products";
 import { productCategories } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
 import { useReveal } from "@/lib/useReveal";
+import ProductImage from "./ProductImage";
 
 const ICONS: Record<string, typeof Camera> = {
   "bullet-cameras": Camera,
@@ -82,6 +83,7 @@ export default function CategoryDetail({ category }: { category: ProductCategory
                   alt={category.title}
                   fill
                   priority
+                  quality={92}
                   sizes="(max-width: 1024px) 90vw, 480px"
                   className="object-contain p-10"
                 />
@@ -103,7 +105,7 @@ export default function CategoryDetail({ category }: { category: ProductCategory
                 className="reveal eyora-card rounded-3xl overflow-hidden flex flex-col group"
               >
                 <div className="relative h-48 bg-white">
-                  <Image src={p.image} alt={p.name} fill sizes="(max-width: 768px) 90vw, 380px" className="object-contain p-7" />
+                  <ProductImage src={p.image} alt={p.name} sizes="(max-width: 768px) 90vw, 380px" className="object-contain p-7" />
                   <span className="absolute top-4 left-4 eyora-badge px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
                     {p.megapixel}
                   </span>

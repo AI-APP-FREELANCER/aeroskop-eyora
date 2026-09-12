@@ -90,6 +90,7 @@ export default function ProductDetail({
                   alt={product.name}
                   fill
                   priority
+                  quality={92}
                   sizes="(max-width: 1024px) 90vw, 480px"
                   className="object-contain p-10"
                 />

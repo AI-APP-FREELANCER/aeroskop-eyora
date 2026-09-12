@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calculator } from "lucide-react";
+import { Calculator, Menu, X } from "lucide-react";
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/site";
 
 const NAV_LINKS = [
@@ -64,14 +64,15 @@ export default function Header() {
 
         <button
           aria-label="Toggle menu"
-          className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full"
+          aria-expanded={menuOpen}
+          className="lg:hidden w-10 h-10 shrink-0 flex items-center justify-center rounded-full"
           onClick={() => setMenuOpen((v) => !v)}
         >
-          <span className="relative w-4 h-3 block">
-            <span className={`absolute left-0 top-0 w-4 h-[1.5px] bg-[var(--text-primary)] transition-all ${menuOpen ? "rotate-45 top-1.5" : ""}`} />
-            <span className={`absolute left-0 top-1.5 w-4 h-[1.5px] bg-[var(--text-primary)] transition-all ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`absolute left-0 top-3 w-4 h-[1.5px] bg-[var(--text-primary)] transition-all ${menuOpen ? "-rotate-45 top-1.5" : ""}`} />
-          </span>
+          {menuOpen ? (
+            <X size={20} className="text-[var(--text-primary)]" />
+          ) : (
+            <Menu size={20} className="text-[var(--text-primary)]" />
+          )}
         </button>
       </div>
 

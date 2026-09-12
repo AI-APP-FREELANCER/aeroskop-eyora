@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { ShieldCheck, Cable, MapPin, Layers } from "lucide-react";
 import { useReveal } from "@/lib/useReveal";
+import ProductImage from "./ProductImage";
 
 const REASONS = [
   { icon: ShieldCheck, title: "Metal, Weatherproof Builds", desc: "IP67 and IK10 rated housings across the outdoor range — built for Gulf heat, dust and impact." },
@@ -43,10 +43,9 @@ export default function WhyEyora() {
         </div>
 
         <div className="relative aspect-square rounded-[2rem] overflow-hidden eyora-card product-tile-bg">
-          <Image
+          <ProductImage
             src="/images/products/dome-camera-varifocal-family.png"
             alt="Eyora dome camera"
-            fill
             sizes="(max-width: 1024px) 90vw, 480px"
             className="object-contain p-8"
           />

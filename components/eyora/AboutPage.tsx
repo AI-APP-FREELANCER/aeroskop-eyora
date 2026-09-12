@@ -7,6 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CtaBand from "./CtaBand";
 import WhatsAppButton from "./WhatsAppButton";
+import ProductImage from "./ProductImage";
 import { useReveal } from "@/lib/useReveal";
 
 const SECTIONS = [
@@ -107,6 +108,7 @@ export default function AboutPage() {
                     alt="Eyora cameras, NVR and PoE switch produced in Bahrain"
                     fill
                     priority
+                    quality={92}
                     sizes="(max-width: 1024px) 90vw, 560px"
                     className="object-cover"
                   />
@@ -128,10 +130,9 @@ export default function AboutPage() {
                 }`}
               >
                 <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden eyora-card product-tile-bg">
-                  <Image
+                  <ProductImage
                     src={s.image}
                     alt={s.title}
-                    fill
                     sizes="(max-width: 1024px) 90vw, 560px"
                     className="object-cover"
                   />

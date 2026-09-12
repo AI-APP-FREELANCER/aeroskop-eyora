@@ -149,6 +149,7 @@ export default function Hero() {
                 alt={cur.eyebrow}
                 fill
                 priority
+                quality={92}
                 sizes="(max-width: 1024px) 90vw, 600px"
                 className="object-contain p-10"
               />

@@ -534,6 +534,7 @@ export default function AIStorageCalculator() {
                       src={resolvedProduct?.product.image || bestProduct.product_image_url || "/images/products/nvr.png"}
                       alt={bestProduct.product_name}
                       fill
+                      quality={92}
                       sizes="200px"
                       className="object-contain p-4"
                     />

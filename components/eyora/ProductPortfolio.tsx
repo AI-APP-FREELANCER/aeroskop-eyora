@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, ArrowRight } from "lucide-react";
+import ProductImage from "./ProductImage";
 import { productCategories, totalProductCount } from "@/lib/products";
 import { useReveal } from "@/lib/useReveal";
 
@@ -40,7 +41,7 @@ export default function ProductPortfolio() {
               className="eyora-card rounded-full pl-2 pr-4 py-2 flex items-center gap-3 shrink-0 hover:border-[var(--glass-border-hover)] transition-colors"
             >
               <span className="relative w-8 h-8 rounded-full bg-white overflow-hidden shrink-0">
-                <Image src={cat.heroImage} alt="" fill sizes="32px" className="object-contain p-1" />
+                <Image src={cat.heroImage} alt="" fill quality={92} sizes="32px" className="object-contain p-1" />
               </span>
               <span className="text-sm font-semibold text-[var(--text-primary)] whitespace-nowrap">{cat.title}</span>
               <span className="text-xs text-[var(--text-muted)]">{cat.products.length}</span>
@@ -59,10 +60,9 @@ export default function ProductPortfolio() {
                 className="reveal eyora-card rounded-3xl overflow-hidden flex flex-col group"
               >
                 <div className="relative h-56 bg-white img-zoom">
-                  <Image
+                  <ProductImage
                     src={cat.heroImage}
                     alt={cat.title}
-                    fill
                     sizes="(max-width: 768px) 90vw, 420px"
                     className="object-contain p-8"
                   />

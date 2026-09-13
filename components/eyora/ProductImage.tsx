@@ -19,6 +19,12 @@ export default function ProductImage({
   priority?: boolean;
 }) {
   const [loaded, setLoaded] = useState(false);
+  // Next's optimizer already refuses to resize/re-encode animated GIFs (it
+  // would freeze the animation), but still runs them through sharp just to
+  // detect that — a step that occasionally throws "Input Buffer is empty"
+  // under load. Skipping optimization for .gif sources avoids that entirely
+  // with no loss, since nothing was being optimized anyway.
+  const unoptimized = src.toLowerCase().endsWith(".gif");
 
   return (
     <>
@@ -32,6 +38,7 @@ export default function ProductImage({
         fill
         quality={quality}
         priority={priority}
+        unoptimized={unoptimized}
         sizes={sizes}
         className={`${className} transition-opacity duration-500 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
         onLoad={() => setLoaded(true)}

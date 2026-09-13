@@ -70,14 +70,18 @@ else
 fi
 echo ""
 
-# ── Step 6: Remove old build artifacts (keep the image-optimizer cache) ─────
-echo "Step 6: Removing old build artifacts..."
-IMAGE_CACHE_BACKUP="/tmp/eyora-image-cache-backup"
-sudo rm -rf "$IMAGE_CACHE_BACKUP" 2>/dev/null || true
-if [ -d "$APP_DIR/.next/cache/images" ]; then
-    echo "  Preserving existing image cache across this deploy..."
-    sudo cp -a "$APP_DIR/.next/cache/images" "$IMAGE_CACHE_BACKUP"
-fi
+# ── Step 6: Remove old build artifacts, including the image-optimizer cache ──
+# Deliberately NOT preserved across deploys: Next's image cache is keyed by
+# URL+width+quality, not by the source file's content, so a stale cached
+# entry for a /public image that just got replaced (same filename, new
+# bytes) would survive untouched — carrying the OLD image forward
+# indefinitely (up to its baked-in expiry) even though the new file is
+# already on disk. warm-image-cache.sh (below) only actually regenerates a
+# variant when the cache is empty for it, so a "warm" pass over a preserved,
+# stale cache is a no-op. A full wipe here + real regeneration during warm-up
+# is what makes this deploy trustworthy after any image swap.
+echo "Step 6: Removing old build artifacts (including image cache)..."
+sudo rm -rf /tmp/eyora-image-cache-backup 2>/dev/null || true  # leftover from an earlier version of this script
 sudo rm -rf "$APP_DIR/.next" 2>/dev/null || true
 sudo -u "$APP_USER" rm -rf "$APP_DIR/node_modules/.cache" 2>/dev/null || true
 echo "✓ Build artifacts removed"
@@ -95,14 +99,8 @@ sudo -u "$APP_USER" bash -c "cd '$APP_DIR' && npm run build"
 echo "✓ Build complete"
 echo ""
 
-# ── Step 9: Restore the image cache, then fix ownership and permissions ──────
-echo "Step 9: Restoring image cache and setting permissions..."
-if [ -d "$IMAGE_CACHE_BACKUP" ]; then
-    sudo mkdir -p "$APP_DIR/.next/cache"
-    sudo cp -a "$IMAGE_CACHE_BACKUP" "$APP_DIR/.next/cache/images"
-    sudo rm -rf "$IMAGE_CACHE_BACKUP"
-    echo "  ✓ Restored previously-cached image variants"
-fi
+# ── Step 9: Fix ownership and permissions ─────────────────────────────────────
+echo "Step 9: Setting correct ownership and permissions..."
 sudo chown -R "$APP_USER:$APP_USER" "$APP_DIR/.next"
 sudo chmod -R o+rX "$APP_DIR/.next"
 sudo chmod o+x /home/aeroskopuser

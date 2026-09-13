@@ -98,7 +98,7 @@ function TextBlock({ ind }: { ind: Industry }) {
   );
 }
 
-function PhotoPanel({ ind, aspect = "aspect-[4/3]" }: { ind: Industry; aspect?: string }) {
+function PhotoPanel({ ind, aspect = "aspect-[16/9]" }: { ind: Industry; aspect?: string }) {
   return (
     <div className={`relative ${aspect} rounded-[1.5rem] overflow-hidden eyora-card`}>
       <ProductImage src={ind.image} alt={ind.imageAlt} priority sizes="(max-width: 1024px) 90vw, 640px" className="object-cover" />
@@ -434,7 +434,7 @@ export default function IndustryDetail({ industry }: { industry: Industry }) {
                   </div>
                 </div>
 
-                <PhotoPanel ind={ind} aspect="aspect-[21/9]" />
+                <PhotoPanel ind={ind} aspect="aspect-[16/9]" />
 
                 <div className="mt-8 space-y-6">
                   {ind.processSteps && ind.statTiles ? (

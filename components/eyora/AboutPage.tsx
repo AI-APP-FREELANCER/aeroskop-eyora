@@ -134,7 +134,7 @@ export default function AboutPage() {
                     src={s.image}
                     alt={s.title}
                     sizes="(max-width: 1024px) 90vw, 560px"
-                    className="object-cover"
+                    className="object-contain p-6"
                   />
                 </div>
                 <div>

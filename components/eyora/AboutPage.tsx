@@ -16,35 +16,35 @@ const SECTIONS = [
     title: "Made in Bahrain",
     lead: "Our products are produced in Bahrain and ship with Bahraini certificates of origin.",
     body: "Regional manufacturing is not a slogan for us. It means shorter lead times, stock that actually exists when you order it, and engineers in your time zone rather than eight hours behind you. When a partner needs a hundred units for a site next month, we can answer that question honestly instead of checking with a factory we've never visited.",
-    image: "/images/about/factory-bahrain.jpg",
+    image: "/images/about/factory-bahrain.png",
   },
   {
     eyebrow: "Build Quality",
     title: "Components chosen for working life",
     lead: "We build with quality components because the alternative is cheaper for us and more expensive for the people who install and use our equipment.",
     body: "Metal bodies instead of plastic. IP67 and IK10 rated housings. Industrial-grade sensors, power supplies rated well above their working load, and connectors that survive being installed by someone standing on a ladder in August. A camera that fails in its third year costs far more than the difference between a good component and a poor one.",
-    image: "/images/about/component-quality.jpg",
+    image: "/images/about/component-quality.png",
   },
   {
     eyebrow: "Warranty",
     title: "Five-year hardware warranty",
     lead: "Every Eyora product carries a five-year hardware warranty. Most of the market offers two.",
     body: "We don't offer five years because we're generous. We offer it because we build for a working life considerably longer than that, and because a warranty is the only reliability claim a company can be held to. Everything else is an adjective.",
-    image: "/images/about/five-year-warranty.jpg",
+    image: "/images/about/five-year-warranty.png",
   },
   {
     eyebrow: "Support",
     title: "Support that answers",
     lead: "Regional support, from people who know the product, in your working hours.",
     body: "Our support team can read the firmware. They have the same hardware on the bench. Most issues are resolved in the first conversation, because the person answering isn't reading from a script written by a different company.",
-    image: "/images/about/support-team.jpg",
+    image: "/images/about/support-team.png",
   },
   {
     eyebrow: "Compatibility",
     title: "Works both ways",
     lead: "Our NVRs record any ONVIF-compliant camera with full functionality. Our cameras work on any ONVIF-compliant NVR, with motion recording supported.",
     body: "Most sites already have something on the wall or in the rack. Replacing working equipment to change one box has never made sense to us, so we built for the opposite. Add Eyora cameras to the recorder you have. Put an Eyora recorder behind the cameras you have. Or run both, and get the full feature set.",
-    image: "/images/about/onvif-compatibility.jpg",
+    image: "/images/about/onvif-compatibility.png",
   },
   {
     eyebrow: "Partners",
@@ -58,7 +58,7 @@ const SECTIONS = [
     title: "What we're for",
     lead: "Security hardware became complicated for reasons that had nothing to do with security. Licence tiers, subscription platforms, feature locks, ecosystems designed to make leaving expensive.",
     body: "We build the opposite. Hardware that is owned outright, works with equipment already on site, and carries a warranty long enough to matter. There is nothing to renew and nothing to unlock.",
-    image: "/images/about/what-we-are-for.jpg",
+    image: "/images/about/what-we-are-for.png",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function AboutPage() {
               <div className="relative animate-scale-in">
                 <div className="relative aspect-[4/3] max-w-xl mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white">
                   <Image
-                    src="/images/about/lineup-made-in-bahrain.png"
+                    src="/images/about/lineup-made-in-bahrain-v2.png"
                     alt="Eyora cameras, NVR and PoE switch produced in Bahrain"
                     fill
                     priority

@@ -192,7 +192,7 @@ export const industries: Industry[] = [
     name: "Hospitality",
     theme: "light",
     heroVariant: "overlay",
-    image: "/images/industries/hospitality.jpg",
+    image: "/images/industries/hospitality.gif",
     imageAlt: "Premium hospitality lobby and guest entrance",
     badge: "HOSPITALITY SECURITY",
     headline: "Discreet protection for every guest space.",

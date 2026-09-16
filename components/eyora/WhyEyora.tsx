@@ -23,7 +23,7 @@ export default function WhyEyora() {
         />
         <div className="relative reveal is-visible">
           <div className="eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5">
-            Why Eyora
+            About
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
             Built for sites that don&apos;t get second chances.

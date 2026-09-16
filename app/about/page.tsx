@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AboutPage from "@/components/eyora/AboutPage";
 
 export const metadata: Metadata = {
-  title: "About — Eyora",
+  title: "Why Eyora — Eyora",
   description:
     "Eyora is a brand of Aeroskop, a security hardware company that designs, produces and supports its own IP cameras, NVRs and PoE switches from Bahrain.",
 };

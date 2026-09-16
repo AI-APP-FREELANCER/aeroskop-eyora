@@ -84,13 +84,13 @@ export default function AboutPage() {
                 Home
               </Link>
               <ChevronRight size={14} className="breadcrumb-sep" />
-              <span className="text-[var(--text-primary)] font-semibold">About</span>
+              <span className="text-[var(--text-primary)] font-semibold">Why Eyora</span>
             </nav>
 
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <div className="animate-fade-up">
                 <div className="eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5">
-                  About Eyora
+                  Why Eyora
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight text-[var(--text-primary)]">
                   Made in Bahrain.

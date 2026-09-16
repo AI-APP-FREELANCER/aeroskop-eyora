@@ -14,43 +14,43 @@ const SECTIONS = [
   {
     eyebrow: "Made in Bahrain",
     title: "Made in Bahrain",
-    lead: "Our products are produced in Bahrain and ship with Bahraini certificates of origin.",
-    body: "Regional manufacturing is not a slogan for us. It means shorter lead times, stock that actually exists when you order it, and engineers in your time zone rather than eight hours behind you. When a partner needs a hundred units for a site next month, we can answer that question honestly instead of checking with a factory we've never visited.",
+    lead: "Eyora cameras, NVRs and PoE switches are produced in Bahrain, close to the GCC projects they serve.",
+    body: "Local production gives our partners shorter lead times, dependable stock availability and an engineering team working in the same time zone, so project planning runs on regional timelines rather than overseas shipping schedules.",
     image: "/images/about/factory-bahrain.png",
   },
   {
-    eyebrow: "Build Quality",
-    title: "Components chosen for working life",
-    lead: "We build with quality components because the alternative is cheaper for us and more expensive for the people who install and use our equipment.",
-    body: "Metal bodies instead of plastic. IP67 and IK10 rated housings. Industrial-grade sensors, power supplies rated well above their working load, and connectors that survive being installed by someone standing on a ladder in August. A camera that fails in its third year costs far more than the difference between a good component and a poor one.",
+    eyebrow: "Engineered for Endurance",
+    title: "Engineered for Endurance",
+    lead: "Component selection is guided by lifetime performance rather than initial cost.",
+    body: "Eyora cameras use metal enclosures, IP67 and IK10 rated housings, industrial-grade sensors and conservatively rated power stages, designed for 24/7 operation in demanding GCC conditions.",
     image: "/images/about/component-quality.png",
   },
   {
-    eyebrow: "Warranty",
-    title: "Five-year hardware warranty",
-    lead: "Every Eyora product carries a five-year hardware warranty. Most of the market offers two.",
-    body: "We don't offer five years because we're generous. We offer it because we build for a working life considerably longer than that, and because a warranty is the only reliability claim a company can be held to. Everything else is an adjective.",
+    eyebrow: "Five Years Warranty",
+    title: "Five Years Warranty",
+    lead: "Eyora cameras, NVRs and PoE switches carry a five-year hardware warranty as standard.",
+    body: "The coverage period follows from how the products are engineered: component selection, thermal design and production testing are all aimed at continuous operation well beyond that term. Every Eyora product is also covered by a five-year advance replacement warranty — if a unit or component fails within the warranty period, we send the replacement straight away, with no need to return the faulty hardware first.",
     image: "/images/about/five-year-warranty.png",
   },
   {
-    eyebrow: "Support",
-    title: "Support that answers",
-    lead: "Regional support, from people who know the product, in your working hours.",
-    body: "Our support team can read the firmware. They have the same hardware on the bench. Most issues are resolved in the first conversation, because the person answering isn't reading from a script written by a different company.",
+    eyebrow: "Regional Technical Support",
+    title: "Regional Technical Support",
+    lead: "Eyora support is handled by Aeroskop's technical team in Bahrain during GCC working hours.",
+    body: "Our engineers review device logs and configurations directly, and bring in the wider engineering team when an issue needs deeper investigation.",
     image: "/images/about/support-team.png",
   },
   {
-    eyebrow: "Compatibility",
-    title: "Works both ways",
-    lead: "Our NVRs record any ONVIF-compliant camera with full functionality. Our cameras work on any ONVIF-compliant NVR, with motion recording supported.",
-    body: "Most sites already have something on the wall or in the rack. Replacing working equipment to change one box has never made sense to us, so we built for the opposite. Add Eyora cameras to the recorder you have. Put an Eyora recorder behind the cameras you have. Or run both, and get the full feature set.",
+    eyebrow: "Open by Design",
+    title: "Open by Design",
+    lead: "Eyora NVRs record video from ONVIF-compliant cameras, with core streaming and recording functions supported. Eyora cameras integrate with ONVIF-compliant NVRs, including motion-based recording.",
+    body: "This lets you add Eyora cameras to an existing recorder, or install an Eyora NVR alongside cameras already on site, without replacing equipment that still works. Pairing Eyora cameras with Eyora recorders unlocks the full feature set.",
     image: "/images/about/onvif-compatibility.png",
   },
   {
-    eyebrow: "Partners",
-    title: "Partners",
-    lead: "Eyora is sold through a distribution and installer network across the region.",
-    body: "We build the hardware and stand behind it; our partners bring the site knowledge, the survey, the install and the local relationship. It's a division of labour we take seriously, which is why partners get direct access to our engineers rather than a reseller portal and a phone number that rings out.",
+    eyebrow: "Partner Network",
+    title: "Partner Network",
+    lead: "Eyora is supplied through a network of distributors and installation partners across the GCC.",
+    body: "Aeroskop designs, builds and supports the hardware, and our partners contribute site surveys, installation and local project knowledge. Registered partners work directly with our technical team on system design, configuration and after-sales support.",
     image: "/images/about/partners.jpg",
   },
   {
@@ -97,7 +97,7 @@ export default function AboutPage() {
                   Eyora is a brand of Aeroskop — a security hardware company that designs, produces and supports its own products from Bahrain.
                 </p>
                 <p className="mt-4 text-base md:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
-                  We make IP cameras, network video recorders and PoE switches. Every unit is produced in Bahrain and carries a Bahraini certificate of origin. The firmware running inside them is written by our own engineers, not licensed from a third party. When we say we&apos;ll fix something, we can fix it — at the code level, not by forwarding a ticket to someone else.
+                  We make IP cameras, network video recorders and PoE switches. Every unit is produced in Bahrain and carries a Bahraini certificate of origin. Our engineering team develops and maintains the full firmware stack in-house, covering ISP tuning, the H.265/H.264 encoding pipeline, ONVIF integration and the web interface — so when we say we&apos;ll fix something, we can fix it at the code level, not by forwarding a ticket to someone else.
                 </p>
               </div>
 

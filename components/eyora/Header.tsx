@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Calculator, Menu, X } from "lucide-react";
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/site";
+import { versionedSrc } from "@/lib/imageManifest";
 
 const NAV_LINKS = [
   { label: "Products", href: "/#products" },
@@ -33,7 +34,7 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto eyora-card rounded-full flex items-center justify-between h-16 px-3 md:px-3 md:pl-6">
         <a href="/#top" className="flex items-center gap-2 shrink-0">
-          <Image src="/images/eyora-logo.png" alt="Eyora" width={159} height={30} priority className="h-6 md:h-7 w-auto" />
+          <Image src={versionedSrc("/images/eyora-logo.png")} alt="Eyora" width={159} height={30} priority className="h-6 md:h-7 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-7">

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { productCategories } from "@/lib/products";
 import { whatsappLink, DEFAULT_WHATSAPP_MESSAGE, WHATSAPP_DISPLAY } from "@/lib/site";
+import { versionedSrc } from "@/lib/imageManifest";
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-[1.3fr_1fr_1fr] gap-12">
         <div>
           <Image
-            src="/images/eyora-logo.png"
+            src={versionedSrc("/images/eyora-logo.png")}
             alt="Eyora"
             width={159}
             height={30}

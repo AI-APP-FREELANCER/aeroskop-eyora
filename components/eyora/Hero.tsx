@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { whatsappLink } from "@/lib/site";
+import { versionedSrc } from "@/lib/imageManifest";
 
 const SLIDES = [
   {
@@ -145,7 +146,7 @@ export default function Hero() {
             />
             <div className="absolute inset-0 rounded-[2rem] eyora-card overflow-hidden">
               <Image
-                src={cur.image}
+                src={versionedSrc(cur.image)}
                 alt={cur.eyebrow}
                 fill
                 priority

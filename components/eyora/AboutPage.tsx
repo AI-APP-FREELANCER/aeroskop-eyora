@@ -9,6 +9,9 @@ import CtaBand from "./CtaBand";
 import WhatsAppButton from "./WhatsAppButton";
 import ProductImage from "./ProductImage";
 import { useReveal } from "@/lib/useReveal";
+import { imageAspect, versionedSrc } from "@/lib/imageManifest";
+
+const HERO_IMAGE = "/images/about/lineup-made-in-bahrain-v2.png";
 
 const SECTIONS = [
   {
@@ -102,15 +105,18 @@ export default function AboutPage() {
               </div>
 
               <div className="relative animate-scale-in">
-                <div className="relative aspect-[4/3] max-w-xl mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white">
+                <div
+                  className="relative max-w-xl mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white"
+                  style={{ aspectRatio: imageAspect(HERO_IMAGE) ?? 4 / 3 }}
+                >
                   <Image
-                    src="/images/about/lineup-made-in-bahrain-v2.png"
+                    src={versionedSrc(HERO_IMAGE)}
                     alt="Eyora cameras, NVR and PoE switch produced in Bahrain"
                     fill
                     priority
                     quality={92}
                     sizes="(max-width: 1024px) 90vw, 560px"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               </div>
@@ -129,12 +135,15 @@ export default function AboutPage() {
                   i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden eyora-card product-tile-bg">
+                <div
+                  className="relative rounded-[2rem] overflow-hidden eyora-card bg-white"
+                  style={{ aspectRatio: imageAspect(s.image) ?? 4 / 3 }}
+                >
                   <ProductImage
                     src={s.image}
                     alt={s.title}
                     sizes="(max-width: 1024px) 90vw, 560px"
-                    className="object-contain p-6"
+                    className="object-contain"
                   />
                 </div>
                 <div>

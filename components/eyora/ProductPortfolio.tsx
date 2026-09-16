@@ -6,6 +6,7 @@ import { Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, Arro
 import ProductImage from "./ProductImage";
 import { productCategories, totalProductCount } from "@/lib/products";
 import { useReveal } from "@/lib/useReveal";
+import { versionedSrc } from "@/lib/imageManifest";
 
 const ICONS: Record<string, typeof Camera> = {
   "bullet-cameras": Camera,
@@ -41,7 +42,7 @@ export default function ProductPortfolio() {
               className="eyora-card rounded-full pl-2 pr-4 py-2 flex items-center gap-3 shrink-0 hover:border-[var(--glass-border-hover)] transition-colors"
             >
               <span className="relative w-8 h-8 rounded-full bg-white overflow-hidden shrink-0">
-                <Image src={cat.heroImage} alt="" fill quality={92} sizes="32px" className="object-contain p-1" />
+                <Image src={versionedSrc(cat.heroImage)} alt="" fill quality={92} sizes="32px" className="object-contain p-1" />
               </span>
               <span className="text-sm font-semibold text-[var(--text-primary)] whitespace-nowrap">{cat.title}</span>
               <span className="text-xs text-[var(--text-muted)]">{cat.products.length}</span>

@@ -21,6 +21,7 @@ import { generateExcelReport } from "@/lib/calculator/excelGenerator";
 import { generateCSVReport } from "@/lib/calculator/csvGenerator";
 import { formatStorage } from "@/lib/calculator/storageFormatter";
 import { AIRecommendationResponse, CalculatorForm, EnhancedStorageCalculation } from "@/lib/calculator/types";
+import { versionedSrc } from "@/lib/imageManifest";
 import { productCategories } from "@/lib/products";
 import { datasheets } from "@/lib/datasheets";
 import CalculatorLoginModal from "./CalculatorLoginModal";
@@ -531,7 +532,7 @@ export default function AIStorageCalculator() {
                 <div className="eyora-card rounded-3xl p-6 md:p-8 grid md:grid-cols-[200px_1fr] gap-6">
                   <div className="relative h-40 md:h-full rounded-2xl bg-white overflow-hidden">
                     <Image
-                      src={resolvedProduct?.product.image || bestProduct.product_image_url || "/images/products/nvr.png"}
+                      src={versionedSrc(resolvedProduct?.product.image || bestProduct.product_image_url || "/images/products/nvr.png")}
                       alt={bestProduct.product_name}
                       fill
                       quality={92}

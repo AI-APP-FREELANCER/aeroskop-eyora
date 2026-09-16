@@ -6,6 +6,7 @@ import { ChevronRight, ArrowRight, FileDown, Check } from "lucide-react";
 import type { Product, ProductCategory } from "@/lib/products";
 import { datasheets } from "@/lib/datasheets";
 import { whatsappLink } from "@/lib/site";
+import { versionedSrc } from "@/lib/imageManifest";
 
 export default function ProductDetail({
   category,
@@ -86,7 +87,7 @@ export default function ProductDetail({
             <div className="relative animate-scale-in">
               <div className="relative aspect-square max-w-md mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white">
                 <Image
-                  src={product.image}
+                  src={versionedSrc(product.image)}
                   alt={product.name}
                   fill
                   priority

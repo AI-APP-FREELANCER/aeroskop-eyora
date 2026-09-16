@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { versionedSrc } from "@/lib/imageManifest";
 
 export default function ProductImage({
   src,
@@ -33,7 +34,7 @@ export default function ProductImage({
         className={`absolute inset-0 shimmer-placeholder transition-opacity duration-300 ${loaded ? "opacity-0" : "opacity-100"}`}
       />
       <Image
-        src={src}
+        src={versionedSrc(src)}
         alt={alt}
         fill
         quality={quality}

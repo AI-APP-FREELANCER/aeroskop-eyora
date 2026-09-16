@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated at build time by scripts/build-image-manifest.mjs — always
+# regenerated fresh, never hand-edited, no reason to track it
+/lib/imageManifest.json

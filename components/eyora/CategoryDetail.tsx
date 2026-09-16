@@ -8,6 +8,7 @@ import { productCategories } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
 import { useReveal } from "@/lib/useReveal";
 import ProductImage from "./ProductImage";
+import { versionedSrc } from "@/lib/imageManifest";
 
 const ICONS: Record<string, typeof Camera> = {
   "bullet-cameras": Camera,
@@ -79,7 +80,7 @@ export default function CategoryDetail({ category }: { category: ProductCategory
             <div className="relative animate-scale-in">
               <div className="relative aspect-square max-w-md mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white">
                 <Image
-                  src={category.heroImage}
+                  src={versionedSrc(category.heroImage)}
                   alt={category.title}
                   fill
                   priority

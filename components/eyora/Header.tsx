@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Products", href: "/#products" },
   { label: "Why Eyora", href: "/about" },
   { label: "Industries", href: "/#industries" },
-  { label: "About", href: "/#why-eyora" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ];
 

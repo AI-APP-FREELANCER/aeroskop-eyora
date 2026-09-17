@@ -1,54 +1,37 @@
 "use client";
 
-import { ShieldCheck, Cable, MapPin, Layers } from "lucide-react";
-import { useReveal } from "@/lib/useReveal";
-import ProductImage from "./ProductImage";
-
-const REASONS = [
-  { icon: ShieldCheck, title: "Metal, Weatherproof Builds", desc: "IP67 and IK10 rated housings across the outdoor range — built for Gulf heat, dust and impact." },
-  { icon: Cable, title: "PoE-Simple Installs", desc: "Power and data over a single cable across cameras, NVRs and switches — fewer points of failure." },
-  { icon: MapPin, title: "Bahrain Stock & Support", desc: "Based in Bahrain, with a catalog sized and stocked for local and regional deployments." },
-  { icon: Layers, title: "Flexible NVR Scaling", desc: "6 to 32-channel recorders mean the same product family scales from a shop to a campus." },
-];
-
 export default function WhyEyora() {
-  const ref = useReveal<HTMLDivElement>();
-
   return (
-    <section id="why-eyora" className="px-5 md:px-8 py-24 md:py-32">
-      <div className="max-w-7xl mx-auto eyora-surface rounded-[2.5rem] p-8 md:p-16 grid lg:grid-cols-2 gap-14 items-center overflow-hidden relative">
+    <section id="about" className="px-5 md:px-8 py-24 md:py-32">
+      <div className="max-w-4xl mx-auto eyora-surface rounded-[2.5rem] p-8 md:p-16 overflow-hidden relative">
         <div
           className="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-60"
           style={{ background: "var(--gradient-glow-overlay)" }}
         />
         <div className="relative reveal is-visible">
-          <div className="eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5">
-            About
+          <div className="text-center">
+            <div className="eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-5 inline-flex">
+              About Eyora
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)] max-w-xl mx-auto">
+              Same line. Same standards. Built for a different budget.
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--text-primary)]">
-            Built for sites that don&apos;t get second chances.
-          </h2>
 
-          <div ref={ref} data-reveal-root className="mt-10 grid sm:grid-cols-2 gap-6">
-            {REASONS.map((r) => (
-              <div key={r.title} data-reveal className="reveal">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center eyora-badge !px-0 !py-0 mb-3">
-                  <r.icon size={17} />
-                </div>
-                <h3 className="text-sm font-bold text-[var(--text-primary)]">{r.title}</h3>
-                <p className="mt-1.5 text-sm text-[var(--text-secondary)] leading-relaxed">{r.desc}</p>
-              </div>
-            ))}
+          <div className="mt-10 max-w-2xl mx-auto text-[var(--text-secondary)] leading-relaxed [&>p]:mt-4 first:[&>p]:mt-0">
+            <p>Eyora is a brand of Aeroskop, a surveillance technology company headquartered in the Kingdom of Bahrain.</p>
+            <p>Aeroskop builds professional surveillance hardware for enterprise, government and critical-infrastructure projects across the Gulf. That work sets a high bar, and it carries a cost, because those projects demand capability that most installations will never use.</p>
+            <p>A large part of the security industry sits outside that. Shops, villas, warehouses, clinics, small offices, mid-size commercial sites. Budget-conscious, but still needing equipment that is honestly built and survives a Gulf summer. For years that segment has been handed the cheapest import available and told to live with the consequences.</p>
+            <p>Eyora is our answer, and it came off our own production line.</p>
+            <p>Eyora units are built in the same facility in Bahrain, from the same approved component sources, assembled by the same people, and put through the same incoming inspection and end-of-line testing as our professional range. The firmware is written by the same Aeroskop engineers. The certificate of origin says Bahrain.</p>
+            <p>What we changed was the specification, not the standard. Eyora carries the capability the volume market genuinely uses and leaves out the specialised features that add cost to a professional product. What we did not touch is the part that decides whether a camera is still working in year five: metal bodies instead of plastic, IP67 and IK10 housings rated for Gulf heat, dust and impact, 120dB True WDR, PoE with DC12V fallback, and full ONVIF Profile S, G and T.</p>
+            <p>The price works for three reasons, none of which involve cutting the build. Eyora shares a production line Aeroskop has already paid for. It is a focused range, which means longer production runs and better component pricing. And it sells direct to distributors rather than through a chain of agents each taking a margin for moving a box.</p>
+            <p>That is how a metal-bodied camera with True WDR, an IP67 and IK10 rating and a five-year hardware warranty lands at the price most brands ask for their plastic entry line.</p>
           </div>
-        </div>
 
-        <div className="relative aspect-square rounded-[2rem] overflow-hidden eyora-card product-tile-bg">
-          <ProductImage
-            src="/images/products/dome-camera-varifocal-family.png"
-            alt="Eyora dome camera"
-            sizes="(max-width: 1024px) 90vw, 480px"
-            className="object-contain p-8"
-          />
+          <p className="mt-10 text-center text-lg md:text-xl font-bold text-[var(--text-primary)]">
+            Eyora. A brand of Aeroskop. Made in Bahrain.
+          </p>
         </div>
       </div>
     </section>

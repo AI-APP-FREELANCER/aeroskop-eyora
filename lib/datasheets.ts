@@ -1143,17 +1143,17 @@ export const datasheets: Record<string, Datasheet> = {
     ],
   },
 
-  "nvr-4chp": {
-    pdfUrl: "/datasheets/eyr-nvr-4chp-8chp.pdf",
+  "nvr-6c4p": {
+    pdfUrl: "/datasheets/eyr-6c4p-10c8p-nvr.pdf",
     warranty: "5 Year Warranty",
     overview:
-      "The EYR-NVR-4CHP is a compact 4-channel Mini Network Video Recorder designed for efficient IP surveillance. It supports recording up to 6MP, Ultra 265 / H.265 / H.264 compression, 4 built-in PoE ports, HDMI and VGA output, and a single SATA bay supporting up to 6TB. Intelligent features including Intrusion Detection, Cross-Line Detection, Human Body Detection, Area Detection, Auto Tracking and Behavior Search provide smarter and more reliable security monitoring.",
+      "The EYR-6C4P-NVR is a compact 6-channel Mini Network Video Recorder designed for efficient IP surveillance. It supports recording up to 6MP, Ultra 265 / H.265 / H.264 compression, 4 built-in PoE ports, HDMI and VGA output, and a single SATA bay supporting up to 10TB. Intelligent features including Intrusion Detection, Cross-Line Detection, Human Body Detection, Area Detection, Auto Tracking and Behavior Search provide smarter and more reliable security monitoring.",
     keyFeatures: [
-      "4-Channel IP Camera Input",
+      "6-Channel IP Camera Input",
       "4 Built-in PoE Ports — 54W Budget",
       "Up to 6MP Recording Resolution",
       "Ultra 265 / H.265 / H.264 Compression",
-      "1× SATA HDD Interface, up to 6TB",
+      "1× SATA HDD Interface, up to 10TB",
       "HDMI and VGA Video Output",
       "Synchronous Multi-Channel Playback",
       "Intrusion, Cross-Line and Area Detection",
@@ -1164,7 +1164,7 @@ export const datasheets: Record<string, Datasheet> = {
     specSections: [
       {
         section: "Video / Audio Input",
-        rows: [{ label: "IP Video Input", value: "4-ch" }],
+        rows: [{ label: "IP Video Input", value: "6-ch" }],
       },
       {
         section: "Video / Audio Output",
@@ -1173,7 +1173,7 @@ export const datasheets: Record<string, Datasheet> = {
           { label: "VGA Output", value: "1920×1080/60Hz, 1920×1080/50Hz, 1600×1200/60Hz, 1280×1024/60Hz, 1280×720/60Hz, 1024×768/60Hz" },
           { label: "Recording Resolution", value: "6MP / 5MP / 4MP / 3MP / 1080P / 960P / 720P / 960H / D1 / 2CIF / CIF" },
           { label: "Audio Output", value: "1-ch, 3.5mm" },
-          { label: "Synchronous Playback", value: "4-ch" },
+          { label: "Synchronous Playback", value: "6-ch" },
           { label: "Multi-screen Layout", value: "3 / 4" },
         ],
       },
@@ -1201,7 +1201,7 @@ export const datasheets: Record<string, Datasheet> = {
         rows: [
           { label: "VCA Detection by Camera", value: "Intrusion Detection, Cross Line Detection, Enter Area, Leave Area, Audio Detection, Auto Tracking" },
           { label: "VCA Search", value: "Behavior Search" },
-          { label: "Smart Intrusion Prevention", value: "4-ch (channels 1–4; alarm only, no image)" },
+          { label: "Smart Intrusion Prevention", value: "6-ch (channels 1–6; alarm only, no image)" },
         ],
       },
       {
@@ -1210,6 +1210,7 @@ export const datasheets: Record<string, Datasheet> = {
           { label: "Decoding Format", value: "Ultra 265 / H.265 / H.264" },
           { label: "Live View / Playback", value: "6MP / 5MP / 4MP / 3MP / 1080P / 960P / 720P / 960H / D1 / 2CIF / CIF" },
           { label: "Decoding Capability", value: "1 × 6MP@30 | 1 × 5MP@30 | 2 × 4MP@30 | 2 × 3MP@30 | 4 × 1080p@30" },
+          { label: "Live View Capacity", value: "Up to 6 × 720p@30 or 6 × D1@25" },
         ],
       },
       {
@@ -1249,17 +1250,17 @@ export const datasheets: Record<string, Datasheet> = {
     ],
   },
 
-  "nvr-8chp": {
-    pdfUrl: "/datasheets/eyr-nvr-4chp-8chp.pdf",
+  "nvr-10c8p": {
+    pdfUrl: "/datasheets/eyr-6c4p-10c8p-nvr.pdf",
     warranty: "5 Year Warranty",
     overview:
-      "The EYR-NVR-8CHP is a compact 8-channel Mini Network Video Recorder designed for efficient IP surveillance. It supports recording up to 6MP, Ultra 265 / H.265 / H.264 compression, 8 built-in PoE ports, HDMI and VGA output, and a single SATA bay supporting up to 6TB. Intelligent features including Intrusion Detection, Cross-Line Detection, Human Body Detection, Area Detection, Auto Tracking and Behavior Search provide smarter and more reliable security monitoring.",
+      "The EYR-10C8P-NVR is a compact 10-channel Mini Network Video Recorder designed for efficient IP surveillance. It supports recording up to 6MP, Ultra 265 / H.265 / H.264 compression, 8 built-in PoE ports, HDMI and VGA output, and a single SATA bay supporting up to 10TB. Intelligent features including Intrusion Detection, Cross-Line Detection, Human Body Detection, Area Detection, Auto Tracking and Behavior Search provide smarter and more reliable security monitoring.",
     keyFeatures: [
-      "8-Channel IP Camera Input",
+      "10-Channel IP Camera Input",
       "8 Built-in PoE Ports — 75W Budget",
       "Up to 6MP Recording Resolution",
       "Ultra 265 / H.265 / H.264 Compression",
-      "1× SATA HDD Interface, up to 6TB",
+      "1× SATA HDD Interface, up to 10TB",
       "HDMI and VGA Video Output",
       "Synchronous Multi-Channel Playback",
       "Intrusion, Cross-Line and Area Detection",
@@ -1270,7 +1271,7 @@ export const datasheets: Record<string, Datasheet> = {
     specSections: [
       {
         section: "Video / Audio Input",
-        rows: [{ label: "IP Video Input", value: "8-ch" }],
+        rows: [{ label: "IP Video Input", value: "10-ch" }],
       },
       {
         section: "Video / Audio Output",
@@ -1279,7 +1280,7 @@ export const datasheets: Record<string, Datasheet> = {
           { label: "VGA Output", value: "1920×1080/60Hz, 1920×1080/50Hz, 1600×1200/60Hz, 1280×1024/60Hz, 1280×720/60Hz, 1024×768/60Hz" },
           { label: "Recording Resolution", value: "6MP / 5MP / 4MP / 3MP / 1080P / 960P / 720P / 960H / D1 / 2CIF / CIF" },
           { label: "Audio Output", value: "1-ch, 3.5mm" },
-          { label: "Synchronous Playback", value: "8-ch" },
+          { label: "Synchronous Playback", value: "10-ch" },
           { label: "Multi-screen Layout", value: "3 / 4 / 5 / 7 / 9" },
         ],
       },
@@ -1307,7 +1308,7 @@ export const datasheets: Record<string, Datasheet> = {
         rows: [
           { label: "VCA Detection by Camera", value: "Intrusion Detection, Cross Line Detection, Enter Area, Leave Area, Audio Detection, Auto Tracking" },
           { label: "VCA Search", value: "Behavior Search" },
-          { label: "Smart Intrusion Prevention", value: "4-ch (channels 1–4; alarm only, no image)" },
+          { label: "Smart Intrusion Prevention", value: "6-ch (channels 1–6; alarm only, no image)" },
         ],
       },
       {
@@ -1316,6 +1317,7 @@ export const datasheets: Record<string, Datasheet> = {
           { label: "Decoding Format", value: "Ultra 265 / H.265 / H.264" },
           { label: "Live View / Playback", value: "6MP / 5MP / 4MP / 3MP / 1080P / 960P / 720P / 960H / D1 / 2CIF / CIF" },
           { label: "Decoding Capability", value: "1 × 6MP@30 | 1 × 5MP@30 | 2 × 4MP@30 | 2 × 3MP@30 | 4 × 1080p@30" },
+          { label: "Live View Capacity", value: "Up to 8 × 720p@30 or 10 × D1@25" },
         ],
       },
       {
@@ -1355,11 +1357,11 @@ export const datasheets: Record<string, Datasheet> = {
     ],
   },
 
-  "nvr-16chp": {
-    pdfUrl: "/datasheets/eyr-nvr-16chp.pdf",
+  "nvr-16c16p": {
+    pdfUrl: "/datasheets/eyr-16c16p-nvr.pdf",
     warranty: "5 Year Warranty",
     overview:
-      "The EYR-NVR-16CHP provides powerful and efficient video management for up to 16 IP cameras at up to 12MP, with Ultra 265 / H.265 / H.264 compression. It features 16 independent PoE ports, dual SATA storage up to 10TB per drive, 4K HDMI output, ANR network recovery, and intelligent detection including Face, Human, Vehicle, Intrusion and Cross-Line Detection.",
+      "The EYR-16C16P-NVR provides powerful and efficient video management for up to 16 IP cameras at up to 12MP, with Ultra 265 / H.265 / H.264 compression. It features 16 independent PoE ports, dual SATA storage up to 10TB per drive, 4K HDMI output, ANR network recovery, and intelligent detection including Face, Human, Vehicle, Intrusion and Cross-Line Detection.",
     keyFeatures: [
       "16-Channel IP Camera Input",
       "16 Independent PoE Ports",
@@ -1465,11 +1467,11 @@ export const datasheets: Record<string, Datasheet> = {
     ],
   },
 
-  "nvr-32ch": {
-    pdfUrl: "/datasheets/eyr-nvr-32ch.pdf",
+  "nvr-32c": {
+    pdfUrl: "/datasheets/eyr-32c-nvr.pdf",
     warranty: "5 Year Warranty",
     overview:
-      "The EYR-NVR-32CH delivers reliable, high-performance surveillance recording for up to 32 IP cameras at up to 32MP, with Ultra 265 / H.265 / H.264 compression. Dual SATA storage, 4K HDMI output, advanced AI detection, smart search and ANR technology provide efficient and secure video management for commercial and large-scale applications.",
+      "The EYR-32C-NVR delivers reliable, high-performance surveillance recording for up to 32 IP cameras at up to 32MP, with Ultra 265 / H.265 / H.264 compression. Dual SATA storage, 4K HDMI output, advanced AI detection, smart search and ANR technology provide efficient and secure video management for commercial and large-scale applications.",
     keyFeatures: [
       "32-Channel IP Camera Input",
       "Up to 32MP Recording Resolution",

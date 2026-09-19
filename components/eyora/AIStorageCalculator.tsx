@@ -33,7 +33,7 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-/** Resolve a SKU the backend recommends (e.g. "EYR-NVR-16CHP") to Eyora's own
+/** Resolve a SKU the backend recommends (e.g. "EYR-16C16P-NVR") to Eyora's own
  *  catalog entry, so the result card can show the real product photo, PDP
  *  link, and datasheet download — never Aeroskop's. */
 function resolveEyoraProduct(model: string | undefined) {

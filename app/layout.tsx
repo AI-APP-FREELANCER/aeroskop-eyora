@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Eyora builds metal-bodied IP cameras, H.265 NVR systems, and PoE networking gear engineered for real-world conditions. Based in Bahrain, stocked for the Gulf.",
   icons: {
-    icon: "/images/eyora-logo.png",
+    icon: "/images/eyora-icon.png",
   },
 };
 

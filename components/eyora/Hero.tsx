@@ -59,7 +59,7 @@ export default function Hero() {
   const cur = SLIDES[slide];
 
   return (
-    <section id="top" className="relative pt-32 pb-16 md:pt-44 md:pb-24 px-5 md:px-8 overflow-hidden">
+    <section id="top" className="relative pt-16 pb-4 sm:pt-32 sm:pb-16 md:pt-44 md:pb-24 px-5 md:px-8 overflow-hidden">
       <div
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full opacity-70"
         style={{ background: "var(--gradient-glow-overlay)" }}
@@ -75,9 +75,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+      <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 sm:gap-14 items-center">
         <div>
-          <div key={`badge-${slide}`} className="animate-fade-up eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-6">
+          <div key={`badge-${slide}`} className="animate-fade-up eyora-badge px-4 py-1.5 text-xs font-semibold tracking-wide uppercase mb-3 sm:mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--eyora-green-mid)] animate-pulse-glow" />
             {cur.eyebrow}
           </div>
@@ -95,7 +95,7 @@ export default function Hero() {
             )}
           </h1>
 
-          <p key={`sub-${slide}`} className="animate-fade-up delay-200 mt-6 text-base md:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
+          <p key={`sub-${slide}`} className="animate-fade-up delay-200 mt-3 sm:mt-6 text-base md:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
             {cur.sub}
           </p>
 
@@ -105,7 +105,7 @@ export default function Hero() {
             </p>
           )}
 
-          <div className="animate-fade-up delay-300 mt-9 flex flex-wrap items-center gap-4">
+          <div className="animate-fade-up delay-300 mt-5 sm:mt-9 flex flex-wrap items-center gap-4">
             <a href={cur.ctaHref} className="btn-primary btn-shine rounded-full px-7 py-3.5 text-sm font-semibold">
               {cur.cta}
             </a>
@@ -122,7 +122,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-2.5">
+          <div className="mt-5 sm:mt-10 flex items-center gap-2.5">
             {SLIDES.map((s, i) => (
               <button
                 key={s.eyebrow}

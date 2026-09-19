@@ -87,13 +87,13 @@ export default function ProductDetail({
             <div className="relative animate-scale-in">
               <div className="relative aspect-square max-w-md mx-auto rounded-[2rem] eyora-card overflow-hidden bg-white">
                 <Image
-                  src={versionedSrc(product.image)}
+                  src={versionedSrc(product.heroImage ?? product.image)}
                   alt={product.name}
                   fill
                   priority
                   quality={92}
                   sizes="(max-width: 1024px) 90vw, 480px"
-                  className="object-contain p-10"
+                  className={`object-contain p-10 ${category.slug === "nvr" ? "scale-[0.8]" : ""}`}
                 />
               </div>
             </div>

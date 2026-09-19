@@ -3,6 +3,11 @@ export interface Product {
   name: string;
   megapixel: string;
   image: string;
+  /** Preferred image for the product's own detail page, when it should
+   *  differ from the listing-grid thumbnail in `image` (e.g. showing a
+   *  front view on the PDP while the grid alternates front/side). Falls
+   *  back to `image` when not set. */
+  heroImage?: string;
   specs: string[];
   datasheetFamily?: string;
 }
@@ -254,13 +259,14 @@ export const productCategories: ProductCategory[] = [
     title: "NVR",
     eyebrow: "Recording",
     tagline: "Scalable Ultra 265 network video recorders from 6 to 32 channels.",
-    heroImage: "/images/products/nvr.png",
+    heroImage: "/images/products/nvr-front.png",
     products: [
       {
         sku: "EYR-6C4P-NVR",
         name: "6-Channel Mini NVR",
         megapixel: "6CH",
-        image: "/images/products/nvr.png",
+        image: "/images/products/nvr-front.png",
+        heroImage: "/images/products/nvr-front.png",
         specs: ["4 built-in PoE ports, 54W budget", "1 SATA interface, up to 10TB", "Ultra 265 / H.265 / H.264", "Up to 6MP recording", "HDMI & VGA output", "5-year warranty"],
         datasheetFamily: "nvr-6c4p",
       },
@@ -269,6 +275,7 @@ export const productCategories: ProductCategory[] = [
         name: "10-Channel Mini NVR",
         megapixel: "10CH",
         image: "/images/products/nvr.png",
+        heroImage: "/images/products/nvr-front.png",
         specs: ["8 built-in PoE ports, 75W budget", "1 SATA interface, up to 10TB", "Ultra 265 / H.265 / H.264", "Up to 6MP recording", "HDMI & VGA output", "5-year warranty"],
         datasheetFamily: "nvr-10c8p",
       },
@@ -276,7 +283,8 @@ export const productCategories: ProductCategory[] = [
         sku: "EYR-16C16P-NVR",
         name: "16-Channel NVR",
         megapixel: "16CH",
-        image: "/images/products/nvr.png",
+        image: "/images/products/nvr-front.png",
+        heroImage: "/images/products/nvr-front.png",
         specs: ["16 independent PoE ports, 240W budget", "2 SATA interfaces, up to 20TB total", "Ultra 265 / H.265 / H.264", "Up to 12MP recording", "4K HDMI output", "5-year warranty"],
         datasheetFamily: "nvr-16c16p",
       },
@@ -285,6 +293,7 @@ export const productCategories: ProductCategory[] = [
         name: "32-Channel NVR",
         megapixel: "32CH",
         image: "/images/products/nvr.png",
+        heroImage: "/images/products/nvr-front.png",
         specs: ["Dual Gigabit network ports", "2 SATA interfaces, up to 32TB total", "Ultra 265 / H.265 / H.264", "Up to 32MP recording", "4K HDMI output", "5-year warranty"],
         datasheetFamily: "nvr-32c",
       },

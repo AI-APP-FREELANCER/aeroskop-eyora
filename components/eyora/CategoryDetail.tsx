@@ -86,7 +86,7 @@ export default function CategoryDetail({ category }: { category: ProductCategory
                   priority
                   quality={92}
                   sizes="(max-width: 1024px) 90vw, 480px"
-                  className="object-contain p-10"
+                  className={`object-contain p-10 ${category.slug === "nvr" ? "scale-[0.8]" : ""}`}
                 />
               </div>
             </div>
@@ -106,7 +106,12 @@ export default function CategoryDetail({ category }: { category: ProductCategory
                 className="reveal eyora-card rounded-3xl overflow-hidden flex flex-col group"
               >
                 <div className="relative h-48 bg-white">
-                  <ProductImage src={p.image} alt={p.name} sizes="(max-width: 768px) 90vw, 380px" className="object-contain p-7" />
+                  <ProductImage
+                    src={p.image}
+                    alt={p.name}
+                    sizes="(max-width: 768px) 90vw, 380px"
+                    className={`object-contain p-7 ${category.slug === "nvr" ? "scale-[0.8]" : ""}`}
+                  />
                   <span className="absolute top-4 left-4 eyora-badge px-3 py-1 text-[10px] font-bold uppercase tracking-wide">
                     {p.megapixel}
                   </span>

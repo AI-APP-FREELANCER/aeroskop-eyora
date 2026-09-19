@@ -65,7 +65,7 @@ export default function ProductPortfolio() {
                     src={cat.heroImage}
                     alt={cat.title}
                     sizes="(max-width: 768px) 90vw, 420px"
-                    className="object-contain p-8"
+                    className={cat.slug === "nvr" ? "object-contain p-12" : "object-contain p-8"}
                   />
                   {cat.badge && (
                     <span className="absolute top-4 left-4 eyora-badge px-3 py-1 text-[10px] font-bold uppercase tracking-wide">

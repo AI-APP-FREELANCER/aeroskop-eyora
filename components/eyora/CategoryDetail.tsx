@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, Check, FileText } from "lucide-react";
+import { ChevronRight, ArrowRight, Camera, DoorClosed, Aperture, Wifi, HardDrive, Network, RadarIcon, Check, FileText, Server } from "lucide-react";
 import type { ProductCategory } from "@/lib/products";
 import { productCategories } from "@/lib/products";
 import { whatsappLink } from "@/lib/site";
@@ -18,6 +18,7 @@ const ICONS: Record<string, typeof Camera> = {
   "wifi-cameras": Wifi,
   nvr: HardDrive,
   "poe-switches": Network,
+  "rhino-servers": Server,
 };
 
 export default function CategoryDetail({ category }: { category: ProductCategory }) {
